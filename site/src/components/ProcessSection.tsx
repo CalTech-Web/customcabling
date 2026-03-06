@@ -53,9 +53,9 @@ export default function ProcessSection() {
           {/* Connector line - aligned to center of circles */}
           <div className="hidden lg:block absolute top-8 left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-accent/40 via-accent/20 to-accent/40" />
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
+          <ol className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 list-none">
             {steps.map((step, i) => (
-              <motion.div
+              <motion.li
                 key={step.title}
                 className="relative text-center"
                 initial={{ opacity: 0, y: 20 }}
@@ -71,9 +71,9 @@ export default function ProcessSection() {
                 </div>
                 <h3 className="text-white font-semibold mb-2">{step.title}</h3>
                 <p className="text-gray-400 text-sm">{step.description}</p>
-              </motion.div>
+              </motion.li>
             ))}
-          </div>
+          </ol>
         </div>
       </div>
     </section>

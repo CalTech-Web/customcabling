@@ -43,7 +43,7 @@ export default function TestimonialsCTA() {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-20">
           {testimonials.map((t, i) => (
-            <motion.div
+            <motion.article
               key={t.name}
               className="relative p-8 rounded-2xl bg-background border border-border group hover:border-accent/30 transition-all duration-300 hover:shadow-lg hover:shadow-accent/5 hover:-translate-y-1"
               initial={{ opacity: 0, y: 20 }}
@@ -57,15 +57,15 @@ export default function TestimonialsCTA() {
                   <Star key={s} className="w-4 h-4 fill-cta text-cta" />
                 ))}
               </div>
-              <p className="text-gray-300 text-sm leading-relaxed mb-6">
+              <blockquote className="text-gray-300 text-sm leading-relaxed mb-6">
                 &ldquo;{t.quote}&rdquo;
-              </p>
-              <div className="border-t border-border pt-4">
+              </blockquote>
+              <footer className="border-t border-border pt-4">
                 <div className="text-white font-semibold text-sm">{t.name}</div>
                 <div className="text-gray-500 text-xs">{t.role}</div>
                 <div className="text-accent/60 text-xs mt-0.5">{t.company}</div>
-              </div>
-            </motion.div>
+              </footer>
+            </motion.article>
           ))}
         </div>
 

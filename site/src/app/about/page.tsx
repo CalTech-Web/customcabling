@@ -144,7 +144,7 @@ export default function AboutPage() {
           <h2 className="text-3xl font-bold text-white mb-12 text-center">
             Why Choose Us
           </h2>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          <ul className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto list-none">
             {[
               "Licensed and insured low-voltage unrestricted cabling company",
               "In business since 2001 with 25+ years of experience",
@@ -153,7 +153,7 @@ export default function AboutPage() {
               "Certified fiber optic splicing and testing capabilities",
               "Safety and security first approach for every project",
             ].map((item, i) => (
-              <div
+              <li
                 key={i}
                 className="flex items-start gap-3 p-5 rounded-xl bg-surface border border-border hover:border-accent/30 transition-all duration-200"
               >
@@ -161,9 +161,9 @@ export default function AboutPage() {
                   <div className="w-2 h-2 rounded-full bg-accent" />
                 </div>
                 <p className="text-gray-300 text-sm">{item}</p>
-              </div>
+              </li>
             ))}
-          </div>
+          </ul>
         </div>
       </section>
 

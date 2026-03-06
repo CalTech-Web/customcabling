@@ -91,7 +91,7 @@ export default function IndustriesPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {industries.map((industry) => (
-              <div
+              <article
                 key={industry.name}
                 className="p-8 rounded-xl bg-surface border border-border hover:border-accent/30 transition-all duration-300 hover:shadow-lg hover:shadow-accent/5 hover:-translate-y-1"
               >
@@ -106,7 +106,7 @@ export default function IndustriesPage() {
                     </li>
                   ))}
                 </ul>
-              </div>
+              </article>
             ))}
           </div>
 

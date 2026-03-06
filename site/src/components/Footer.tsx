@@ -47,7 +47,7 @@ export default function Footer() {
             <p className="text-gray-400 text-sm mb-4">
               Leading the way with communications infrastructure and technology systems since 2001.
             </p>
-            <div className="space-y-2 text-sm text-gray-400">
+            <address className="space-y-2 text-sm text-gray-400 not-italic">
               <a href="tel:6785510952" className="flex items-center gap-2 hover:text-accent-light transition-colors">
                 <Phone className="w-4 h-4 text-accent" /> (678) 551-0952
               </a>
@@ -61,11 +61,11 @@ export default function Footer() {
                 <MapPin className="w-4 h-4 text-accent mt-0.5 shrink-0" />
                 <span>6303 Crest Village Circle, Flowery Branch, GA 30542</span>
               </div>
-            </div>
+            </address>
           </div>
 
           {/* Services */}
-          <div>
+          <nav aria-label="Services">
             <h3 className="text-white font-semibold mb-4">Services</h3>
             <ul className="space-y-2">
               {serviceLinks.map((link) => (
@@ -76,10 +76,10 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
           {/* Industries */}
-          <div>
+          <nav aria-label="Industries">
             <h3 className="text-white font-semibold mb-4">Industries</h3>
             <ul className="space-y-2">
               {industryLinks.map((link) => (
@@ -90,10 +90,10 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
 
           {/* Company */}
-          <div>
+          <nav aria-label="Company">
             <h3 className="text-white font-semibold mb-4">Company</h3>
             <ul className="space-y-2">
               {companyLinks.map((link) => (
@@ -104,7 +104,7 @@ export default function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
+          </nav>
         </div>
       </div>
 

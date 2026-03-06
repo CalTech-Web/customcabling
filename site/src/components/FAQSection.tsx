@@ -59,6 +59,7 @@ export default function FAQSection() {
               <button
                 className="w-full flex items-center justify-between p-5 text-left hover:bg-white/[0.02] transition-all duration-200"
                 onClick={() => setOpen(open === i ? null : i)}
+                aria-expanded={open === i}
               >
                 <span className="text-white font-medium pr-4">{faq.q}</span>
                 <ChevronDown

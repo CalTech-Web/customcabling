@@ -86,7 +86,7 @@ export default function ServicePageLayout({
       <section className="py-24 bg-surface">
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-            <div>
+            <article>
               {/* Service image */}
               <div className="relative rounded-xl overflow-hidden mb-8 border border-border aspect-video bg-surface-light">
                 <Image
@@ -128,16 +128,16 @@ export default function ServicePageLayout({
                   <Phone className="w-4 h-4" /> (678) 551-0952
                 </a>
               </div>
-            </div>
+            </article>
 
-            <div>
+            <aside>
               <div className="p-8 rounded-xl bg-background border border-border">
                 <h3 className="text-xl font-bold text-white mb-6">
                   Request a Free Consultation
                 </h3>
                 <ContactForm source="service-request" />
               </div>
-            </div>
+            </aside>
           </div>
         </div>
       </section>
