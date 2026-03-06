@@ -69,7 +69,7 @@ export default function Hero() {
         </div>
 
         {/* Georgia network map - right column */}
-        <div className="hidden lg:block flex-1 min-w-0 relative h-[500px]">
+        <div className="hidden lg:block flex-1 min-w-0 relative h-[600px] -mr-16">
           <GeorgiaNetworkMap />
         </div>
         </div>
