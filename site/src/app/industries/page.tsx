@@ -8,6 +8,20 @@ export const metadata: Metadata = {
   description:
     "Cabling solutions for commercial, residential, healthcare, education, government, and data center environments across Georgia.",
   alternates: { canonical: "/industries" },
+  openGraph: {
+    title: "Industries We Serve | Custom Cabling Solutions in Georgia",
+    description:
+      "Cabling solutions for commercial, residential, healthcare, education, government, and data center environments across Georgia.",
+    url: "https://customcablingsolutions.com/industries",
+    siteName: "Custom Cabling Solutions",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Industries We Serve | Custom Cabling Solutions in Georgia",
+    description:
+      "Cabling solutions for commercial, residential, healthcare, education, government, and data center environments across Georgia.",
+  },
 };
 
 const industries = [

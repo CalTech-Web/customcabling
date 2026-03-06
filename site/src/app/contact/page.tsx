@@ -7,6 +7,20 @@ export const metadata: Metadata = {
   description:
     "Get a free quote for your cabling project. Call (678) 551-0952 or fill out our contact form.",
   alternates: { canonical: "/contact" },
+  openGraph: {
+    title: "Get a Free Cabling Quote in Georgia | Custom Cabling Solutions",
+    description:
+      "Get a free quote for your cabling project. Call (678) 551-0952 or fill out our contact form.",
+    url: "https://customcablingsolutions.com/contact",
+    siteName: "Custom Cabling Solutions",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Get a Free Cabling Quote in Georgia | Custom Cabling Solutions",
+    description:
+      "Get a free quote for your cabling project. Call (678) 551-0952 or fill out our contact form.",
+  },
 };
 
 export default function ContactPage() {

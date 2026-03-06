@@ -8,6 +8,20 @@ export const metadata: Metadata = {
   description:
     "25+ years of experience in commercial, residential, and underground cabling systems. Licensed, insured, and BICSI/NEC compliant.",
   alternates: { canonical: "/about" },
+  openGraph: {
+    title: "About Custom Cabling Solutions | Low-Voltage Cabling Contractor in Georgia",
+    description:
+      "25+ years of experience in commercial, residential, and underground cabling systems. Licensed, insured, and BICSI/NEC compliant.",
+    url: "https://customcablingsolutions.com/about",
+    siteName: "Custom Cabling Solutions",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "About Custom Cabling Solutions | Low-Voltage Cabling Contractor in Georgia",
+    description:
+      "25+ years of experience in commercial, residential, and underground cabling systems. Licensed, insured, and BICSI/NEC compliant.",
+  },
 };
 
 export default function AboutPage() {

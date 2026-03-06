@@ -19,6 +19,20 @@ export const metadata: Metadata = {
   description:
     "Complete communication cabling services including structured cabling, fiber optic, datacenter build-outs, security cameras, phone systems, and more.",
   alternates: { canonical: "/services" },
+  openGraph: {
+    title: "Cabling Services in Georgia | Custom Cabling Solutions",
+    description:
+      "Complete communication cabling services including structured cabling, fiber optic, datacenter build-outs, security cameras, phone systems, and more.",
+    url: "https://customcablingsolutions.com/services",
+    siteName: "Custom Cabling Solutions",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Cabling Services in Georgia | Custom Cabling Solutions",
+    description:
+      "Complete communication cabling services including structured cabling, fiber optic, datacenter build-outs, security cameras, phone systems, and more.",
+  },
 };
 
 const services = [

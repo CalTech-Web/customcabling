@@ -6,11 +6,39 @@ export const metadata: Metadata = {
   description:
     "Complete data center cabling and build-outs in Atlanta, Gwinnett County, and North Georgia. Server racks, cable tray, and hot/cold aisle containment.",
   alternates: { canonical: "/services/datacenter" },
+  openGraph: {
+    title: "Data Center Cabling & Build-Outs in Georgia | Custom Cabling Solutions",
+    description:
+      "Complete data center cabling and build-outs in Atlanta, Gwinnett County, and North Georgia. Server racks, cable tray, and hot/cold aisle containment.",
+    url: "https://customcablingsolutions.com/services/datacenter",
+    siteName: "Custom Cabling Solutions",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Data Center Cabling & Build-Outs in Georgia | Custom Cabling Solutions",
+    description:
+      "Complete data center cabling and build-outs in Atlanta, Gwinnett County, and North Georgia. Server racks, cable tray, and hot/cold aisle containment.",
+  },
+};
+
+const serviceJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "Service",
+  name: "Data Center Cabling & Build-Outs",
+  description:
+    "Complete data center cabling and build-outs in Atlanta, Gwinnett County, and North Georgia. Server racks, cable tray, and hot/cold aisle containment.",
+  url: "https://customcablingsolutions.com/services/datacenter",
+  provider: { "@type": "LocalBusiness", name: "Custom Cabling Solutions", url: "https://customcablingsolutions.com" },
+  areaServed: "Greater Atlanta Metropolitan Area, Georgia",
+  serviceType: "Data Center Build-Outs",
 };
 
 export default function DatacenterPage() {
   return (
-    <ServicePageLayout
+    <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(serviceJsonLd) }} />
+      <ServicePageLayout
       iconName="Server"
       title="Data Center Cabling & Build-Outs in Georgia"
       description="Complete data center cabling infrastructure built from the ground up for businesses across the greater Atlanta metro. Serving Gwinnett County, Gainesville, Roswell, and North Georgia - we design and install the physical layer that keeps your data center running."
@@ -24,5 +52,6 @@ export default function DatacenterPage() {
         "Cable management and labeling",
       ]}
     />
+    </>
   );
 }
