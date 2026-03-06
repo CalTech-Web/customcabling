@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { Server } from "lucide-react";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
@@ -11,7 +10,7 @@ export const metadata: Metadata = {
 export default function DatacenterPage() {
   return (
     <ServicePageLayout
-      icon={Server}
+      iconName="Server"
       title="Datacenter Build-Outs"
       description="Complete datacenter cabling infrastructure from the ground up. We design and install the physical layer that keeps your data moving."
       features={[

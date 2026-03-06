@@ -1,6 +1,6 @@
 import { Metadata } from "next";
 import { Award, Shield, Users, MapPin } from "lucide-react";
-import CTASection from "@/components/CTASection";
+import TestimonialsCTA from "@/components/TestimonialsCTA";
 
 export const metadata: Metadata = {
   title: "About Us - Custom Cabling Solutions",
@@ -21,7 +21,7 @@ export default function AboutPage() {
           </span>
           <h1 className="text-4xl md:text-5xl font-bold text-white mt-2 mb-6">
             Communication Infrastructure Specialists{" "}
-            <span className="text-gradient">Since 2001</span>
+            <span className="text-accent">Since 2001</span>
           </h1>
           <p className="text-gray-400 text-lg max-w-3xl">
             Custom Cabling Solutions is a low-voltage unrestricted licensed and insured
@@ -81,7 +81,7 @@ export default function AboutPage() {
               ].map((item) => (
                 <div
                   key={item.title}
-                  className="p-6 rounded-xl bg-background border border-border"
+                  className="p-6 rounded-xl bg-background border border-border hover:border-accent/30 transition-all duration-300 hover:shadow-lg hover:shadow-accent/5 hover:-translate-y-1"
                 >
                   <item.icon className="w-8 h-8 text-accent mb-3" />
                   <h3 className="text-white font-semibold mb-1">{item.title}</h3>
@@ -110,7 +110,7 @@ export default function AboutPage() {
             ].map((item, i) => (
               <div
                 key={i}
-                className="flex items-start gap-3 p-5 rounded-xl bg-surface border border-border"
+                className="flex items-start gap-3 p-5 rounded-xl bg-surface border border-border hover:border-accent/30 transition-all duration-200"
               >
                 <div className="w-6 h-6 rounded-full bg-accent/20 flex items-center justify-center shrink-0 mt-0.5">
                   <div className="w-2 h-2 rounded-full bg-accent" />
@@ -122,7 +122,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <CTASection />
+      <TestimonialsCTA />
     </>
   );
 }

@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { PhoneCall } from "lucide-react";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
@@ -11,7 +10,7 @@ export const metadata: Metadata = {
 export default function PhoneSystemsPage() {
   return (
     <ServicePageLayout
-      icon={PhoneCall}
+      iconName="PhoneCall"
       title="Digital/VOIP Phone Systems"
       description="Modern phone system installation and cabling for businesses of all sizes. We install, configure, and support IP and VOIP phone solutions."
       features={[

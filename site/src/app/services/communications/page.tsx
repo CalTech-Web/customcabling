@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { Radio } from "lucide-react";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
@@ -11,7 +10,7 @@ export const metadata: Metadata = {
 export default function CommunicationsPage() {
   return (
     <ServicePageLayout
-      icon={Radio}
+      iconName="Radio"
       title="Communications Cabling"
       description="Complete voice and data cabling infrastructure including underground systems and campus backbone connections. We connect buildings and campuses with reliable communication lines."
       features={[

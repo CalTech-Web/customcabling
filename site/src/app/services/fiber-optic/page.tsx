@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { Cable } from "lucide-react";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
@@ -11,7 +10,7 @@ export const metadata: Metadata = {
 export default function FiberOpticPage() {
   return (
     <ServicePageLayout
-      icon={Cable}
+      iconName="Cable"
       title="Fiber Optic Cabling & Splicing"
       description="Certified fiber optic installation for high-speed, long-distance data transmission. We handle everything from fiber pulling to fusion splicing and OTDR testing."
       features={[

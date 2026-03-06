@@ -28,9 +28,9 @@ body {
 
 /* Blue radial glow */
 .hero-glow {
-  background: radial-gradient(ellipse at 50% 0%, rgba(14, 165, 233, 0.15) 0%, transparent 60%),
-              radial-gradient(ellipse at 80% 50%, rgba(30, 58, 95, 0.2) 0%, transparent 50%),
-              radial-gradient(ellipse at 20% 80%, rgba(14, 165, 233, 0.08) 0%, transparent 50%);
+  background: radial-gradient(ellipse at 50% 0%, rgba(14, 165, 233, 0.25) 0%, transparent 60%),
+              radial-gradient(ellipse at 80% 50%, rgba(30, 58, 95, 0.3) 0%, transparent 50%),
+              radial-gradient(ellipse at 20% 80%, rgba(14, 165, 233, 0.12) 0%, transparent 50%);
 }
 
 /* Text gradient */
@@ -59,4 +59,30 @@ html {
 }
 ::-webkit-scrollbar-thumb:hover {
   background: #0ea5e9;
+}
+
+/* Button utilities */
+.btn-primary {
+  @apply bg-cta hover:bg-cta-hover text-white font-semibold rounded-lg transition-all
+         shadow-lg shadow-cta/25 hover:shadow-xl hover:shadow-cta/30 hover:-translate-y-0.5
+         active:translate-y-0;
+}
+
+.btn-outline {
+  @apply border border-accent/30 hover:border-accent/60 text-accent-light font-semibold
+         rounded-lg transition-all hover:bg-accent/5 hover:-translate-y-0.5
+         active:translate-y-0;
+}
+
+/* Section divider */
+.section-divider {
+  height: 1px;
+  background: linear-gradient(90deg, transparent, rgba(14, 165, 233, 0.2), transparent);
+}
+
+/* Subtle grid pattern */
+.subtle-grid {
+  background-image: linear-gradient(rgba(14, 165, 233, 0.03) 1px, transparent 1px),
+                    linear-gradient(90deg, rgba(14, 165, 233, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
 }

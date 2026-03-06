@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { Speaker } from "lucide-react";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
@@ -11,7 +10,7 @@ export const metadata: Metadata = {
 export default function AudioVideoPage() {
   return (
     <ServicePageLayout
-      icon={Speaker}
+      iconName="Speaker"
       title="Audio/Video Distribution"
       description="Professional audio and video system installation for homes and businesses. From home theaters to full conference room AV setups."
       features={[

@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { ArrowRight, Phone } from "lucide-react";
+import { ArrowRight, Phone, Award, Shield, Building2, Users } from "lucide-react";
 
 export default function Hero() {
   return (
@@ -53,13 +53,13 @@ export default function Hero() {
           >
             <Link
               href="/contact"
-              className="inline-flex items-center justify-center gap-2 bg-cta hover:bg-cta-hover text-white px-8 py-3.5 rounded-lg font-semibold transition-colors text-lg"
+              className="btn-primary inline-flex items-center justify-center gap-2 px-8 py-3.5 text-lg"
             >
               Get a Quote <ArrowRight className="w-5 h-5" />
             </Link>
             <a
               href="tel:6785510952"
-              className="inline-flex items-center justify-center gap-2 border border-accent/30 hover:border-accent text-accent-light px-8 py-3.5 rounded-lg font-semibold transition-colors text-lg"
+              className="btn-outline inline-flex items-center justify-center gap-2 px-8 py-3.5 text-lg"
             >
               <Phone className="w-5 h-5" /> (678) 551-0952
             </a>
@@ -68,20 +68,26 @@ export default function Hero() {
 
         {/* Stats row */}
         <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20 pt-10 border-t border-border"
+          className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, delay: 0.5 }}
         >
           {[
-            { value: "25+", label: "Years in Business" },
-            { value: "BICSI", label: "Certified Standards" },
-            { value: "3", label: "Sectors Served" },
-            { value: "11+", label: "Brand Partners" },
+            { value: "25+", label: "Years in Business", icon: Award },
+            { value: "BICSI", label: "Certified Standards", icon: Shield },
+            { value: "3", label: "Sectors Served", icon: Building2 },
+            { value: "11+", label: "Brand Partners", icon: Users },
           ].map((stat) => (
-            <div key={stat.label} className="text-center">
-              <div className="text-3xl font-bold text-gradient">{stat.value}</div>
-              <div className="text-sm text-gray-400 mt-1">{stat.label}</div>
+            <div
+              key={stat.label}
+              className="relative text-center p-4 rounded-xl bg-white/[0.03] border border-white/[0.06]"
+            >
+              <stat.icon className="w-5 h-5 text-accent mx-auto mb-2 opacity-70" />
+              <div className="text-2xl font-bold text-accent-light">{stat.value}</div>
+              <div className="text-xs text-gray-500 mt-1 uppercase tracking-wider">
+                {stat.label}
+              </div>
             </div>
           ))}
         </motion.div>

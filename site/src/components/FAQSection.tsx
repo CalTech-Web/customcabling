@@ -50,10 +50,14 @@ export default function FAQSection() {
           {faqs.map((faq, i) => (
             <div
               key={i}
-              className="border border-border rounded-lg overflow-hidden"
+              className={`rounded-lg overflow-hidden transition-all duration-200 ${
+                open === i
+                  ? "border border-accent/30 bg-white/[0.02]"
+                  : "border border-border hover:border-accent/20"
+              }`}
             >
               <button
-                className="w-full flex items-center justify-between p-5 text-left hover:bg-surface-light transition-colors"
+                className="w-full flex items-center justify-between p-5 text-left hover:bg-white/[0.02] transition-all duration-200"
                 onClick={() => setOpen(open === i ? null : i)}
               >
                 <span className="text-white font-medium pr-4">{faq.q}</span>

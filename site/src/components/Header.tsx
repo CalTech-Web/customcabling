@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import { motion, AnimatePresence } from "framer-motion";
 import { Phone, Menu, X, ChevronDown } from "lucide-react";
 
 const services = [
@@ -62,26 +63,34 @@ export default function Header() {
               <button className="flex items-center gap-1 text-gray-300 hover:text-white transition-colors text-sm font-medium">
                 Services <ChevronDown className="w-4 h-4" />
               </button>
-              {servicesOpen && (
-                <div className="absolute top-full left-0 mt-2 w-64 bg-surface border border-border rounded-lg shadow-xl py-2">
-                  <Link
-                    href="/services"
-                    className="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-surface-light transition-colors"
+              <AnimatePresence>
+                {servicesOpen && (
+                  <motion.div
+                    initial={{ opacity: 0, y: -5 }}
+                    animate={{ opacity: 1, y: 0 }}
+                    exit={{ opacity: 0, y: -5 }}
+                    transition={{ duration: 0.15 }}
+                    className="absolute top-full left-0 mt-2 w-64 bg-surface border border-border rounded-lg shadow-xl py-2"
                   >
-                    All Services
-                  </Link>
-                  <div className="border-t border-border my-1" />
-                  {services.map((s) => (
                     <Link
-                      key={s.href}
-                      href={s.href}
+                      href="/services"
                       className="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-surface-light transition-colors"
                     >
-                      {s.name}
+                      All Services
                     </Link>
-                  ))}
-                </div>
-              )}
+                    <div className="border-t border-border my-1" />
+                    {services.map((s) => (
+                      <Link
+                        key={s.href}
+                        href={s.href}
+                        className="block px-4 py-2 text-sm text-gray-300 hover:text-white hover:bg-surface-light transition-colors"
+                      >
+                        {s.name}
+                      </Link>
+                    ))}
+                  </motion.div>
+                )}
+              </AnimatePresence>
             </div>
 
             <Link href="/industries" className="text-gray-300 hover:text-white transition-colors text-sm font-medium">
@@ -101,7 +110,7 @@ export default function Header() {
             </a>
             <Link
               href="/contact"
-              className="bg-cta hover:bg-cta-hover text-white px-5 py-2 rounded-lg text-sm font-semibold transition-colors"
+              className="bg-cta hover:bg-cta-hover text-white px-5 py-2 rounded-lg text-sm font-semibold transition-all shadow-md shadow-cta/20 hover:shadow-lg hover:shadow-cta/25"
             >
               Get a Quote
             </Link>
@@ -118,44 +127,52 @@ export default function Header() {
         </div>
 
         {/* Mobile menu */}
-        {mobileOpen && (
-          <div className="lg:hidden bg-surface border-t border-border">
-            <nav className="max-w-7xl mx-auto px-4 py-4 space-y-3">
-              <Link href="/" className="block text-gray-300 hover:text-white" onClick={() => setMobileOpen(false)}>
-                Home
-              </Link>
-              <Link href="/services" className="block text-gray-300 hover:text-white" onClick={() => setMobileOpen(false)}>
-                Services
-              </Link>
-              {services.map((s) => (
+        <AnimatePresence>
+          {mobileOpen && (
+            <motion.div
+              initial={{ height: 0, opacity: 0 }}
+              animate={{ height: "auto", opacity: 1 }}
+              exit={{ height: 0, opacity: 0 }}
+              transition={{ duration: 0.2 }}
+              className="lg:hidden bg-surface border-t border-border overflow-hidden"
+            >
+              <nav className="max-w-7xl mx-auto px-4 py-4 space-y-3">
+                <Link href="/" className="block text-gray-300 hover:text-white" onClick={() => setMobileOpen(false)}>
+                  Home
+                </Link>
+                <Link href="/services" className="block text-gray-300 hover:text-white" onClick={() => setMobileOpen(false)}>
+                  Services
+                </Link>
+                {services.map((s) => (
+                  <Link
+                    key={s.href}
+                    href={s.href}
+                    className="block pl-4 text-sm text-gray-400 hover:text-white"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {s.name}
+                  </Link>
+                ))}
+                <Link href="/industries" className="block text-gray-300 hover:text-white" onClick={() => setMobileOpen(false)}>
+                  Industries
+                </Link>
+                <Link href="/about" className="block text-gray-300 hover:text-white" onClick={() => setMobileOpen(false)}>
+                  About
+                </Link>
+                <Link href="/contact" className="block text-gray-300 hover:text-white" onClick={() => setMobileOpen(false)}>
+                  Contact
+                </Link>
                 <Link
-                  key={s.href}
-                  href={s.href}
-                  className="block pl-4 text-sm text-gray-400 hover:text-white"
+                  href="/contact"
+                  className="block btn-primary text-center py-2"
                   onClick={() => setMobileOpen(false)}
                 >
-                  {s.name}
+                  Get a Quote
                 </Link>
-              ))}
-              <Link href="/industries" className="block text-gray-300 hover:text-white" onClick={() => setMobileOpen(false)}>
-                Industries
-              </Link>
-              <Link href="/about" className="block text-gray-300 hover:text-white" onClick={() => setMobileOpen(false)}>
-                About
-              </Link>
-              <Link href="/contact" className="block text-gray-300 hover:text-white" onClick={() => setMobileOpen(false)}>
-                Contact
-              </Link>
-              <Link
-                href="/contact"
-                className="block bg-cta text-white text-center py-2 rounded-lg font-semibold"
-                onClick={() => setMobileOpen(false)}
-              >
-                Get a Quote
-              </Link>
-            </nav>
-          </div>
-        )}
+              </nav>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </header>
     </>
   );

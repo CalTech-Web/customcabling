@@ -66,7 +66,7 @@ const services = [
 
 export default function ServicesSection() {
   return (
-    <section className="py-24 bg-surface">
+    <section className="py-24 bg-surface subtle-grid">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
           <span className="text-accent text-sm font-semibold tracking-wider uppercase">
@@ -92,9 +92,9 @@ export default function ServicesSection() {
             >
               <Link
                 href={service.href}
-                className="group block p-6 rounded-xl bg-background border border-border hover:border-accent/40 transition-all duration-300 h-full"
+                className="group block p-6 rounded-xl bg-background border border-border hover:border-accent/40 transition-all duration-300 h-full hover:shadow-lg hover:shadow-accent/5 hover:-translate-y-1 relative overflow-hidden before:absolute before:inset-x-0 before:top-0 before:h-0.5 before:bg-accent before:scale-x-0 before:transition-transform before:duration-300 hover:before:scale-x-100"
               >
-                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 transition-colors">
+                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 group-hover:scale-110 transition-all duration-300">
                   <service.icon className="w-6 h-6 text-accent" />
                 </div>
                 <h3 className="text-white font-semibold mb-2">{service.title}</h3>

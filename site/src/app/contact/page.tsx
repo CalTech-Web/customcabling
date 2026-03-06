@@ -20,7 +20,7 @@ export default function ContactPage() {
               Contact Us
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-white mt-2 mb-4">
-              Get a <span className="text-gradient">Free Quote</span>
+              Get a <span className="text-accent">Free Quote</span>
             </h1>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
               Tell us about your project and we will get back to you with a custom
@@ -31,7 +31,7 @@ export default function ContactPage() {
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
             {/* Contact info */}
             <div className="space-y-6">
-              <div className="p-6 rounded-xl bg-surface border border-border">
+              <div className="p-6 rounded-xl bg-surface border border-border hover:border-accent/30 transition-all duration-200 group">
                 <Phone className="w-6 h-6 text-accent mb-3" />
                 <h3 className="text-white font-semibold mb-1">Phone</h3>
                 <a
@@ -42,7 +42,7 @@ export default function ContactPage() {
                 </a>
               </div>
 
-              <div className="p-6 rounded-xl bg-surface border border-border">
+              <div className="p-6 rounded-xl bg-surface border border-border hover:border-accent/30 transition-all duration-200 group">
                 <Mail className="w-6 h-6 text-accent mb-3" />
                 <h3 className="text-white font-semibold mb-1">Email</h3>
                 <a
@@ -53,7 +53,7 @@ export default function ContactPage() {
                 </a>
               </div>
 
-              <div className="p-6 rounded-xl bg-surface border border-border">
+              <div className="p-6 rounded-xl bg-surface border border-border hover:border-accent/30 transition-all duration-200 group">
                 <MapPin className="w-6 h-6 text-accent mb-3" />
                 <h3 className="text-white font-semibold mb-1">Location</h3>
                 <p className="text-gray-400 text-sm">
@@ -63,7 +63,7 @@ export default function ContactPage() {
                 </p>
               </div>
 
-              <div className="p-6 rounded-xl bg-surface border border-border">
+              <div className="p-6 rounded-xl bg-surface border border-border hover:border-accent/30 transition-all duration-200 group">
                 <Clock className="w-6 h-6 text-accent mb-3" />
                 <h3 className="text-white font-semibold mb-1">Service Area</h3>
                 <p className="text-gray-400 text-sm">

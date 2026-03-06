@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { Camera } from "lucide-react";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
@@ -11,7 +10,7 @@ export const metadata: Metadata = {
 export default function SecurityCamerasPage() {
   return (
     <ServicePageLayout
-      icon={Camera}
+      iconName="Camera"
       title="Security Cameras"
       description="Protect your property with professionally installed IP camera systems. We handle the full setup from cabling to remote viewing configuration."
       features={[

@@ -7,8 +7,17 @@ interface ContactFormProps {
   source?: string;
 }
 
+const inputClass =
+  "w-full px-4 py-3 rounded-lg bg-background border border-border text-white placeholder-gray-500 focus:outline-none focus:border-accent focus:ring-2 focus:ring-accent/20 focus:bg-surface/30 transition-all duration-200";
+
 export default function ContactForm({ source = "contact-page" }: ContactFormProps) {
-  const [form, setForm] = useState({ name: "", email: "", phone: "", message: "" });
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    phone: "",
+    projectType: "",
+    message: "",
+  });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
   async function handleSubmit(e: FormEvent) {
@@ -23,13 +32,14 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
           name: form.name,
           email: form.email,
           phone: form.phone,
+          projectType: form.projectType,
           message: form.message,
           source,
         }),
       });
       if (res.ok) {
         setStatus("sent");
-        setForm({ name: "", email: "", phone: "", message: "" });
+        setForm({ name: "", email: "", phone: "", projectType: "", message: "" });
       } else {
         setStatus("error");
       }
@@ -61,7 +71,7 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
             required
             value={form.name}
             onChange={(e) => setForm({ ...form, name: e.target.value })}
-            className="w-full px-4 py-3 rounded-lg bg-background border border-border text-white placeholder-gray-500 focus:outline-none focus:border-accent transition-colors"
+            className={inputClass}
             placeholder="Your name"
           />
         </div>
@@ -75,23 +85,46 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
             required
             value={form.email}
             onChange={(e) => setForm({ ...form, email: e.target.value })}
-            className="w-full px-4 py-3 rounded-lg bg-background border border-border text-white placeholder-gray-500 focus:outline-none focus:border-accent transition-colors"
+            className={inputClass}
             placeholder="your@email.com"
           />
         </div>
       </div>
-      <div>
-        <label htmlFor="phone" className="block text-sm text-gray-400 mb-1">
-          Phone
-        </label>
-        <input
-          id="phone"
-          type="tel"
-          value={form.phone}
-          onChange={(e) => setForm({ ...form, phone: e.target.value })}
-          className="w-full px-4 py-3 rounded-lg bg-background border border-border text-white placeholder-gray-500 focus:outline-none focus:border-accent transition-colors"
-          placeholder="(678) 555-1234"
-        />
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        <div>
+          <label htmlFor="phone" className="block text-sm text-gray-400 mb-1">
+            Phone (optional)
+          </label>
+          <input
+            id="phone"
+            type="tel"
+            value={form.phone}
+            onChange={(e) => setForm({ ...form, phone: e.target.value })}
+            className={inputClass}
+            placeholder="(678) 555-1234"
+          />
+        </div>
+        <div>
+          <label htmlFor="projectType" className="block text-sm text-gray-400 mb-1">
+            Project Type
+          </label>
+          <select
+            id="projectType"
+            value={form.projectType}
+            onChange={(e) => setForm({ ...form, projectType: e.target.value })}
+            className={`${inputClass} appearance-none`}
+          >
+            <option value="">Select a project type</option>
+            <option value="structured-cabling">Structured Cabling</option>
+            <option value="fiber-optic">Fiber Optic</option>
+            <option value="datacenter">Datacenter Build-Out</option>
+            <option value="security-cameras">Security Cameras</option>
+            <option value="phone-systems">Phone Systems</option>
+            <option value="audio-video">Audio/Video</option>
+            <option value="wireless">Wireless Networking</option>
+            <option value="other">Other</option>
+          </select>
+        </div>
       </div>
       <div>
         <label htmlFor="message" className="block text-sm text-gray-400 mb-1">
@@ -103,17 +136,19 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
           rows={5}
           value={form.message}
           onChange={(e) => setForm({ ...form, message: e.target.value })}
-          className="w-full px-4 py-3 rounded-lg bg-background border border-border text-white placeholder-gray-500 focus:outline-none focus:border-accent transition-colors resize-none"
+          className={`${inputClass} resize-none`}
           placeholder="Tell us about your project..."
         />
       </div>
       {status === "error" && (
-        <p className="text-red-400 text-sm">Something went wrong. Please try again or call us directly.</p>
+        <p className="text-red-400 text-sm">
+          Something went wrong. Please try again or call us directly.
+        </p>
       )}
       <button
         type="submit"
         disabled={status === "sending"}
-        className="w-full bg-cta hover:bg-cta-hover disabled:opacity-50 text-white py-3.5 rounded-lg font-semibold transition-colors flex items-center justify-center gap-2"
+        className="w-full btn-primary disabled:opacity-50 py-3.5 flex items-center justify-center gap-2"
       >
         {status === "sending" ? (
           <>

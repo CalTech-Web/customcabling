@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { Network } from "lucide-react";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
@@ -11,7 +10,7 @@ export const metadata: Metadata = {
 export default function StructuredCablingPage() {
   return (
     <ServicePageLayout
-      icon={Network}
+      iconName="Network"
       title="Structured Cabling"
       description="Professional installation of Cat5e, Cat6, and Cat6a cabling systems for commercial and residential buildings. Every run is tested and certified to BICSI and NEC standards."
       features={[

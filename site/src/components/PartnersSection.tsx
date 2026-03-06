@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 const partners = [
   "Schneider Electric",
   "Panduit",
-  "Liberty AV Solutions",
+  "Liberty AV",
   "D-Link",
   "Avaya",
   "Chatsworth",
@@ -18,30 +18,30 @@ const partners = [
 
 export default function PartnersSection() {
   return (
-    <section className="py-16 bg-surface border-y border-border">
-      <div className="max-w-7xl mx-auto px-4">
-        <div className="text-center mb-10">
-          <span className="text-accent text-sm font-semibold tracking-wider uppercase">
-            Trusted Partners
-          </span>
-          <h2 className="text-2xl font-bold text-white mt-2">
-            Brands We Work With
-          </h2>
-        </div>
+    <section className="py-16 bg-background border-y border-border overflow-hidden">
+      <div className="max-w-7xl mx-auto px-4 mb-10">
+        <p className="text-center text-sm text-gray-500 uppercase tracking-wider">
+          Brands We Install and Service
+        </p>
+      </div>
+
+      <div className="relative">
+        {/* Fade edges */}
+        <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-background to-transparent z-10" />
+        <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10" />
+
         <motion.div
-          className="flex flex-wrap justify-center items-center gap-8 md:gap-12"
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          viewport={{ once: true }}
-          transition={{ duration: 0.6 }}
+          className="flex gap-16 items-center whitespace-nowrap"
+          animate={{ x: ["0%", "-50%"] }}
+          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
         >
-          {partners.map((partner) => (
-            <div
-              key={partner}
-              className="px-6 py-3 rounded-lg bg-background border border-border text-gray-400 text-sm font-medium hover:text-accent-light hover:border-accent/30 transition-all duration-300"
+          {[...partners, ...partners].map((partner, i) => (
+            <span
+              key={`${partner}-${i}`}
+              className="text-xl md:text-2xl font-bold text-gray-600 select-none hover:text-gray-400 transition-colors duration-300"
             >
               {partner}
-            </div>
+            </span>
           ))}
         </motion.div>
       </div>

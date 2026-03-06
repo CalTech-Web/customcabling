@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { Wifi } from "lucide-react";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
@@ -11,7 +10,7 @@ export const metadata: Metadata = {
 export default function WirelessPage() {
   return (
     <ServicePageLayout
-      icon={Wifi}
+      iconName="Wifi"
       title="Wireless Networking Solutions"
       description="Reliable wireless coverage for your entire facility. We design, deploy, and optimize enterprise Wi-Fi networks built on a solid cabling foundation."
       features={[

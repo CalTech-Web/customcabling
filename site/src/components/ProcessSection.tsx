@@ -33,8 +33,9 @@ const steps = [
 
 export default function ProcessSection() {
   return (
-    <section className="py-24 bg-background">
-      <div className="max-w-7xl mx-auto px-4">
+    <section className="py-24 bg-background relative">
+      <div className="absolute inset-0 dot-grid opacity-10" />
+      <div className="relative max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
           <span className="text-accent text-sm font-semibold tracking-wider uppercase">
             How It Works
@@ -49,8 +50,8 @@ export default function ProcessSection() {
         </div>
 
         <div className="relative">
-          {/* Connector line */}
-          <div className="hidden lg:block absolute top-12 left-[10%] right-[10%] h-0.5 bg-gradient-to-r from-accent/0 via-accent/30 to-accent/0" />
+          {/* Connector line - aligned to center of circles */}
+          <div className="hidden lg:block absolute top-8 left-[10%] right-[10%] h-[2px] bg-gradient-to-r from-accent/40 via-accent/20 to-accent/40" />
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8">
             {steps.map((step, i) => (
@@ -62,7 +63,7 @@ export default function ProcessSection() {
                 viewport={{ once: true }}
                 transition={{ duration: 0.4, delay: i * 0.1 }}
               >
-                <div className="w-16 h-16 mx-auto rounded-full bg-accent/10 border-2 border-accent/30 flex items-center justify-center mb-4 relative z-10">
+                <div className="w-16 h-16 mx-auto rounded-full bg-accent/10 border-2 border-accent/40 flex items-center justify-center mb-4 relative z-10 shadow-lg shadow-accent/10">
                   <step.icon className="w-7 h-7 text-accent" />
                 </div>
                 <div className="text-accent text-xs font-semibold uppercase tracking-wider mb-1">

@@ -11,7 +11,7 @@ import {
   Radio,
   ArrowRight,
 } from "lucide-react";
-import CTASection from "@/components/CTASection";
+import TestimonialsCTA from "@/components/TestimonialsCTA";
 
 export const metadata: Metadata = {
   title: "Services - Custom Cabling Solutions",
@@ -124,7 +124,7 @@ export default function ServicesPage() {
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-white mt-2 mb-4">
               Complete Communication{" "}
-              <span className="text-gradient">Cabling Services</span>
+              <span className="text-accent">Cabling Services</span>
             </h1>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
               From structured cabling to fiber optics, datacenter build-outs to wireless
@@ -168,7 +168,7 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <CTASection />
+      <TestimonialsCTA />
     </>
   );
 }

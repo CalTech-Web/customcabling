@@ -1,7 +1,7 @@
 import { Metadata } from "next";
 import Link from "next/link";
 import { Building2, Home, Heart, GraduationCap, Landmark, Server, ArrowRight } from "lucide-react";
-import CTASection from "@/components/CTASection";
+import TestimonialsCTA from "@/components/TestimonialsCTA";
 
 export const metadata: Metadata = {
   title: "Industries We Serve - Custom Cabling Solutions",
@@ -66,7 +66,7 @@ export default function IndustriesPage() {
               Industries
             </span>
             <h1 className="text-4xl md:text-5xl font-bold text-white mt-2 mb-4">
-              Industries <span className="text-gradient">We Serve</span>
+              Industries <span className="text-accent">We Serve</span>
             </h1>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
               25 years of experience across every building type and cabling challenge.
@@ -78,7 +78,7 @@ export default function IndustriesPage() {
             {industries.map((industry) => (
               <div
                 key={industry.name}
-                className="p-8 rounded-xl bg-surface border border-border hover:border-accent/30 transition-all duration-300"
+                className="p-8 rounded-xl bg-surface border border-border hover:border-accent/30 transition-all duration-300 hover:shadow-lg hover:shadow-accent/5 hover:-translate-y-1"
               >
                 <industry.icon className="w-10 h-10 text-accent mb-4" />
                 <h2 className="text-xl font-bold text-white mb-3">{industry.name}</h2>
@@ -98,7 +98,7 @@ export default function IndustriesPage() {
           <div className="text-center mt-16">
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 bg-cta hover:bg-cta-hover text-white px-8 py-3.5 rounded-lg font-semibold transition-colors text-lg"
+              className="btn-primary inline-flex items-center gap-2 px-8 py-3.5 text-lg"
             >
               Discuss Your Project <ArrowRight className="w-5 h-5" />
             </Link>
@@ -106,7 +106,7 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      <CTASection />
+      <TestimonialsCTA />
     </>
   );
 }
