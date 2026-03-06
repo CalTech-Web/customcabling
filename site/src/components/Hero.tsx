@@ -3,21 +3,18 @@
 import Link from "next/link";
 import { motion } from "framer-motion";
 import { ArrowRight, Phone, Award, Shield, Building2, Users } from "lucide-react";
+import GeorgiaNetworkMap from "./GeorgiaNetworkMap";
 
 export default function Hero() {
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      {/* Background image */}
-      <div className="absolute inset-0">
-        <img
-          src="/images/services/structured-cabling.jpg"
-          alt=""
-          className="w-full h-full object-cover"
-        />
-        <div className="absolute inset-0 bg-background/85" />
-      </div>
+      {/* Background layers */}
+      <div className="absolute inset-0 bg-background" />
       <div className="absolute inset-0 hero-glow" />
-      <div className="absolute inset-0 dot-grid opacity-40" />
+      <div className="absolute inset-0 dot-grid opacity-20" />
+
+      {/* Animated Georgia network map */}
+      <GeorgiaNetworkMap />
 
       <div className="relative max-w-7xl mx-auto px-4 py-24 w-full">
         <div className="max-w-3xl">
