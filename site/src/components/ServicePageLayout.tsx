@@ -58,11 +58,12 @@ export default function ServicePageLayout({
     <>
       {/* Hero */}
       <section className="relative py-24 bg-background overflow-hidden">
-        <div className="absolute inset-0">
-          <img src={heroImage} alt="" className="w-full h-full object-cover" />
-          <div className="absolute inset-0 bg-background/80" />
-        </div>
         <div className="absolute inset-0 hero-glow" />
+        <div className="absolute inset-0 dot-grid opacity-20" />
+        {/* Large decorative icon */}
+        <div className="absolute -right-20 top-1/2 -translate-y-1/2 opacity-[0.03]">
+          <Icon className="w-[400px] h-[400px]" />
+        </div>
         <div className="relative max-w-7xl mx-auto px-4">
           <Link
             href="/services"
@@ -85,6 +86,14 @@ export default function ServicePageLayout({
         <div className="max-w-7xl mx-auto px-4">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
+              {/* Service image */}
+              <div className="rounded-xl overflow-hidden mb-8 border border-border">
+                <img
+                  src={heroImage}
+                  alt={title}
+                  className="w-full h-auto object-contain bg-surface-light"
+                />
+              </div>
               <h2 className="text-2xl font-bold text-white mb-8">What We Deliver</h2>
               <ul className="space-y-4">
                 {features.map((f, i) => (
