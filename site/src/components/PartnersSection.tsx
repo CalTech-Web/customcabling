@@ -43,7 +43,7 @@ export default function PartnersSection() {
             >
               <Image
                 src={partner.logo}
-                alt={partner.name}
+                alt={`${partner.name} logo`}
                 width={100}
                 height={40}
                 className="max-w-full max-h-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"

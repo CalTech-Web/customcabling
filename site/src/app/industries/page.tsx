@@ -1,7 +1,10 @@
 import { Metadata } from "next";
+import React from "react";
 import Link from "next/link";
 import { Building2, Home, Heart, GraduationCap, Landmark, Server, ArrowRight } from "lucide-react";
 import TestimonialsCTA from "@/components/TestimonialsCTA";
+
+type Feature = { label: string; href?: string };
 
 export const metadata: Metadata = {
   title: "Industries We Serve | Custom Cabling Solutions in Georgia",
@@ -24,48 +27,78 @@ export const metadata: Metadata = {
   },
 };
 
-const industries = [
+const industries: { icon: React.ElementType; name: string; description: string; features: Feature[] }[] = [
   {
     icon: Building2,
     name: "Commercial",
     description:
       "Office buildings, retail spaces, warehouses, and corporate campuses. Structured cabling, fiber, and network infrastructure designed for business-critical operations.",
-    features: ["Structured cabling", "Fiber backbone", "Security systems", "Conference room AV"],
+    features: [
+      { label: "Structured cabling", href: "/services/structured-cabling" },
+      { label: "Fiber backbone", href: "/services/fiber-optic" },
+      { label: "Security systems", href: "/services/security-cameras" },
+      { label: "Conference room AV", href: "/services/audio-video" },
+    ],
   },
   {
     icon: Home,
     name: "Residential",
     description:
       "Whole-home networking, home theaters, security cameras, and smart home cabling. Future-proof your home with professionally installed infrastructure.",
-    features: ["Home theater", "Whole-home Wi-Fi", "Security cameras", "Multi-room audio"],
+    features: [
+      { label: "Home theater", href: "/services/audio-video" },
+      { label: "Whole-home Wi-Fi", href: "/services/wireless" },
+      { label: "Security cameras", href: "/services/security-cameras" },
+      { label: "Multi-room audio", href: "/services/audio-video" },
+    ],
   },
   {
     icon: Heart,
     name: "Healthcare",
     description:
       "Hospitals, clinics, and medical offices require reliable, compliant cabling infrastructure. We deliver systems that support critical medical technology.",
-    features: ["HIPAA-conscious installations", "Nurse call systems", "Medical device connectivity", "Fiber optic networks"],
+    features: [
+      { label: "HIPAA-conscious installations", href: "/services/structured-cabling" },
+      { label: "Nurse call systems", href: "/services/communications" },
+      { label: "Medical device connectivity", href: "/services/structured-cabling" },
+      { label: "Fiber optic networks", href: "/services/fiber-optic" },
+    ],
   },
   {
     icon: GraduationCap,
     name: "Education",
     description:
       "Schools, universities, and training facilities need robust network infrastructure. We cable classrooms, labs, and administrative buildings.",
-    features: ["Campus-wide cabling", "Classroom AV systems", "Wi-Fi infrastructure", "Security cameras"],
+    features: [
+      { label: "Campus-wide cabling", href: "/services/communications" },
+      { label: "Classroom AV systems", href: "/services/audio-video" },
+      { label: "Wi-Fi infrastructure", href: "/services/wireless" },
+      { label: "Security cameras", href: "/services/security-cameras" },
+    ],
   },
   {
     icon: Landmark,
     name: "Government",
     description:
       "Government buildings and facilities demand secure, standards-compliant cabling. We meet the strict requirements of public sector projects.",
-    features: ["Secure installations", "Standards compliance", "Building-wide networks", "Emergency communication systems"],
+    features: [
+      { label: "Secure installations", href: "/services/structured-cabling" },
+      { label: "Standards compliance", href: "/services/communications" },
+      { label: "Building-wide networks", href: "/services/wireless" },
+      { label: "Emergency communication systems", href: "/services/phone-systems" },
+    ],
   },
   {
     icon: Server,
     name: "Data Centers",
     description:
       "Purpose-built datacenter cabling with server racks, containment systems, and high-density fiber. Designed for performance and scalability.",
-    features: ["Rack installation", "Hot/cold aisle containment", "High-density fiber", "Cable management"],
+    features: [
+      { label: "Rack installation", href: "/services/datacenter" },
+      { label: "Hot/cold aisle containment", href: "/services/datacenter" },
+      { label: "High-density fiber", href: "/services/fiber-optic" },
+      { label: "Cable management", href: "/services/structured-cabling" },
+    ],
   },
 ];
 
@@ -100,9 +133,15 @@ export default function IndustriesPage() {
                 <p className="text-gray-400 text-sm mb-4">{industry.description}</p>
                 <ul className="space-y-1">
                   {industry.features.map((f) => (
-                    <li key={f} className="flex items-center gap-2 text-gray-500 text-xs">
-                      <div className="w-1 h-1 rounded-full bg-accent" />
-                      {f}
+                    <li key={f.label} className="flex items-center gap-2 text-gray-500 text-xs">
+                      <div className="w-1 h-1 rounded-full bg-accent shrink-0" />
+                      {f.href ? (
+                        <Link href={f.href} className="hover:text-accent transition-colors">
+                          {f.label}
+                        </Link>
+                      ) : (
+                        f.label
+                      )}
                     </li>
                   ))}
                 </ul>

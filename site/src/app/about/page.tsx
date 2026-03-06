@@ -119,14 +119,21 @@ export default function AboutPage() {
             A look at some of our recent projects across Georgia.
           </p>
           <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
-            {[1, 2, 3, 4, 5, 6].map((n) => (
+            {[
+              "Structured cabling installation by Custom Cabling Solutions in Georgia",
+              "Commercial network rack and patch panel installation by Custom Cabling Solutions",
+              "Fiber optic cabling project completed by Custom Cabling Solutions in Georgia",
+              "Cable management and organization by Custom Cabling Solutions",
+              "Low-voltage cabling installation by Custom Cabling Solutions in Georgia",
+              "Office cabling infrastructure installed by Custom Cabling Solutions",
+            ].map((altText, i) => (
               <div
-                key={n}
+                key={i}
                 className="relative group rounded-xl overflow-hidden aspect-[4/3]"
               >
                 <Image
-                  src={`/images/work/${n}.jpg`}
-                  alt={`Project ${n}`}
+                  src={`/images/work/${i + 1}.jpg`}
+                  alt={altText}
                   fill
                   sizes="(max-width: 768px) 50vw, 33vw"
                   className="object-cover group-hover:scale-105 transition-transform duration-500"

@@ -41,6 +41,7 @@ const services = [
     title: "Structured Cabling",
     href: "/services/structured-cabling",
     image: "/images/services/structured-cabling.jpg",
+    altText: "Structured cabling installation in Georgia by Custom Cabling Solutions",
     features: [
       "Cat5e, Cat6, and Cat6a installation",
       "Cable management and pathway systems",
@@ -54,6 +55,7 @@ const services = [
     title: "Fiber Optic Cabling & Splicing",
     href: "/services/fiber-optic",
     image: "/images/services/fiber-optics.jpg",
+    altText: "Fiber optic installation and fusion splicing in Georgia",
     features: [
       "Single-mode and multi-mode fiber installation",
       "Fiber blowing and pulling",
@@ -66,6 +68,7 @@ const services = [
     title: "Datacenter Build-Outs",
     href: "/services/datacenter",
     image: "/images/services/datacenter.jpg",
+    altText: "Data center cabling and rack installation in Georgia",
     features: [
       "Server rack installation",
       "Hot/cold aisle containment",
@@ -78,6 +81,7 @@ const services = [
     title: "Security Cameras",
     href: "/services/security-cameras",
     image: "/images/services/security-cameras.jpg",
+    altText: "IP security camera installation in Georgia by Custom Cabling Solutions",
     features: [
       "IP camera installation",
       "NVR/DVR system setup",
@@ -90,6 +94,7 @@ const services = [
     title: "Digital/VOIP Phone Systems",
     href: "/services/phone-systems",
     image: "/images/services/office-cabling.jpg",
+    altText: "VoIP and digital phone system installation in Georgia",
     features: [
       "IP phone system installation",
       "PBX configuration",
@@ -102,6 +107,7 @@ const services = [
     title: "Audio/Video Distribution",
     href: "/services/audio-video",
     image: "/images/services/audio-video.jpg",
+    altText: "Audio video installation in Georgia for commercial and residential",
     features: [
       "Home theater installation",
       "Commercial AV systems",
@@ -114,6 +120,7 @@ const services = [
     title: "Wireless Networking Solutions",
     href: "/services/wireless",
     image: "/images/services/wireless.jpg",
+    altText: "Enterprise wireless network installation in Georgia",
     features: [
       "Enterprise Wi-Fi deployment",
       "Access point installation",
@@ -126,6 +133,7 @@ const services = [
     title: "Communications Cabling",
     href: "/services/communications",
     image: "/images/services/cable-rearrangement.jpg",
+    altText: "Communications cabling and underground cable installation in Georgia",
     features: [
       "Voice and data network cabling",
       "Underground cabling systems",
@@ -166,7 +174,7 @@ export default function ServicesPage() {
                 <div className="relative h-40 overflow-hidden">
                   <Image
                     src={service.image}
-                    alt={service.title}
+                    alt={service.altText}
                     fill
                     sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"

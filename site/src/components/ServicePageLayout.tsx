@@ -39,6 +39,49 @@ const imageMap: Record<string, string> = {
   Radio: "/images/services/cable-rearrangement.jpg",
 };
 
+const relatedServicesMap: Record<string, { title: string; href: string; description: string }[]> = {
+  Network: [
+    { title: "Fiber Optic Cabling", href: "/services/fiber-optic", description: "Single-mode and multi-mode fiber installation and fusion splicing" },
+    { title: "Datacenter Build-Outs", href: "/services/datacenter", description: "Server racks, cable tray, and hot/cold aisle containment" },
+    { title: "Communications Cabling", href: "/services/communications", description: "Voice, data, and underground cabling systems" },
+  ],
+  Cable: [
+    { title: "Structured Cabling", href: "/services/structured-cabling", description: "Cat5e, Cat6, and Cat6a installation and certification" },
+    { title: "Datacenter Build-Outs", href: "/services/datacenter", description: "Server racks, cable tray, and containment systems" },
+    { title: "Communications Cabling", href: "/services/communications", description: "Campus backbone and underground cabling" },
+  ],
+  Server: [
+    { title: "Structured Cabling", href: "/services/structured-cabling", description: "Cat5e, Cat6, and Cat6a installation and certification" },
+    { title: "Fiber Optic Cabling", href: "/services/fiber-optic", description: "High-speed fiber backbones and fusion splicing" },
+    { title: "Communications Cabling", href: "/services/communications", description: "Voice, data, and underground cabling systems" },
+  ],
+  Camera: [
+    { title: "Structured Cabling", href: "/services/structured-cabling", description: "The cabling infrastructure that powers camera networks" },
+    { title: "Wireless Networking", href: "/services/wireless", description: "Enterprise Wi-Fi for connected properties" },
+    { title: "Phone Systems", href: "/services/phone-systems", description: "VoIP and digital phone system installation" },
+  ],
+  PhoneCall: [
+    { title: "Structured Cabling", href: "/services/structured-cabling", description: "Cat5e, Cat6, and Cat6a cabling for voice and data" },
+    { title: "Wireless Networking", href: "/services/wireless", description: "Enterprise Wi-Fi deployment and optimization" },
+    { title: "Communications Cabling", href: "/services/communications", description: "Voice and data network cabling" },
+  ],
+  Speaker: [
+    { title: "Wireless Networking", href: "/services/wireless", description: "Enterprise Wi-Fi for connected AV systems" },
+    { title: "Structured Cabling", href: "/services/structured-cabling", description: "Cat5e, Cat6, and Cat6a network cabling" },
+    { title: "Security Cameras", href: "/services/security-cameras", description: "IP camera systems for homes and businesses" },
+  ],
+  Wifi: [
+    { title: "Structured Cabling", href: "/services/structured-cabling", description: "The cabling backbone for wireless access points" },
+    { title: "Phone Systems", href: "/services/phone-systems", description: "VoIP phone systems over your network" },
+    { title: "Security Cameras", href: "/services/security-cameras", description: "IP camera systems connected to your network" },
+  ],
+  Radio: [
+    { title: "Structured Cabling", href: "/services/structured-cabling", description: "Cat5e, Cat6, and Cat6a installation and certification" },
+    { title: "Fiber Optic Cabling", href: "/services/fiber-optic", description: "High-speed fiber for long-distance runs" },
+    { title: "Datacenter Build-Outs", href: "/services/datacenter", description: "Server racks, cable tray, and containment" },
+  ],
+};
+
 interface ServicePageLayoutProps {
   iconName: keyof typeof iconMap;
   title: string;
@@ -138,6 +181,27 @@ export default function ServicePageLayout({
                 <ContactForm source="service-request" />
               </div>
             </aside>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Services */}
+      <section className="py-16 bg-background border-t border-border">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-xl font-bold text-white mb-6">Related Services</h2>
+          <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
+            {relatedServicesMap[iconName]?.map((s) => (
+              <Link
+                key={s.href}
+                href={s.href}
+                className="group p-5 rounded-xl bg-surface border border-border hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 hover:-translate-y-1 transition-all duration-300"
+              >
+                <h3 className="text-white font-semibold mb-1 group-hover:text-accent transition-colors">
+                  {s.title}
+                </h3>
+                <p className="text-gray-400 text-sm">{s.description}</p>
+              </Link>
+            ))}
           </div>
         </div>
       </section>

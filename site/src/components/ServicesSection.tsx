@@ -21,6 +21,7 @@ const services = [
     description: "Cat5e, Cat6, and Cat6a installation with full testing and certification.",
     href: "/services/structured-cabling",
     image: "/images/services/structured-cabling.jpg",
+    altText: "Structured cabling installation in Georgia by Custom Cabling Solutions",
   },
   {
     icon: Cable,
@@ -28,6 +29,7 @@ const services = [
     description: "Single-mode and multi-mode fiber installation, splicing, and OTDR testing.",
     href: "/services/fiber-optic",
     image: "/images/services/fiber-optics.jpg",
+    altText: "Fiber optic installation and fusion splicing in Georgia",
   },
   {
     icon: Server,
@@ -35,6 +37,7 @@ const services = [
     description: "Server racks, cable tray systems, and hot/cold aisle containment.",
     href: "/services/datacenter",
     image: "/images/services/datacenter.jpg",
+    altText: "Data center cabling and rack installation in Georgia",
   },
   {
     icon: Camera,
@@ -42,6 +45,7 @@ const services = [
     description: "IP camera systems with NVR setup and remote viewing configuration.",
     href: "/services/security-cameras",
     image: "/images/services/security-cameras.jpg",
+    altText: "IP security camera installation in Georgia by Custom Cabling Solutions",
   },
   {
     icon: PhoneCall,
@@ -49,6 +53,7 @@ const services = [
     description: "Digital and VOIP phone system installation, PBX configuration, and upgrades.",
     href: "/services/phone-systems",
     image: "/images/services/office-cabling.jpg",
+    altText: "VoIP and digital phone system installation in Georgia",
   },
   {
     icon: Speaker,
@@ -56,6 +61,7 @@ const services = [
     description: "Home theaters, commercial AV, conference rooms, and multi-room audio.",
     href: "/services/audio-video",
     image: "/images/services/audio-video.jpg",
+    altText: "Audio video installation in Georgia for commercial and residential",
   },
   {
     icon: Wifi,
@@ -63,6 +69,7 @@ const services = [
     description: "Enterprise Wi-Fi deployment, site surveys, and network optimization.",
     href: "/services/wireless",
     image: "/images/services/wireless.jpg",
+    altText: "Enterprise wireless network installation in Georgia",
   },
   {
     icon: Radio,
@@ -70,6 +77,7 @@ const services = [
     description: "Voice and data networks, underground systems, and campus backbone cabling.",
     href: "/services/communications",
     image: "/images/services/cable-rearrangement.jpg",
+    altText: "Communications cabling and underground cable installation in Georgia",
   },
 ];
 
@@ -106,7 +114,7 @@ export default function ServicesSection() {
                 <div className="relative h-32 overflow-hidden">
                   <Image
                     src={service.image}
-                    alt={service.title}
+                    alt={service.altText}
                     fill
                     sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
                     className="object-cover group-hover:scale-105 transition-transform duration-500"
