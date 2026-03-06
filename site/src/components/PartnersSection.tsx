@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { motion } from "framer-motion";
 
 const partners = [
@@ -40,9 +41,11 @@ export default function PartnersSection() {
               key={`${partner.name}-${i}`}
               className="shrink-0 w-32 h-16 flex items-center justify-center bg-white rounded-lg p-3 hover:shadow-lg hover:shadow-accent/10 transition-all duration-300"
             >
-              <img
+              <Image
                 src={partner.logo}
                 alt={partner.name}
+                width={100}
+                height={40}
                 className="max-w-full max-h-full object-contain opacity-70 hover:opacity-100 transition-opacity duration-300"
               />
             </div>

@@ -15,6 +15,7 @@ export const metadata: Metadata = {
     "Georgia-based low-voltage cabling company specializing in commercial, residential, and underground cabling systems since 2001. BICSI and NEC compliant. Licensed and insured.",
   keywords:
     "cabling, structured cabling, fiber optic, low voltage, network, Georgia, Atlanta, data center, security cameras",
+  metadataBase: new URL("https://customcablingsolutions.com"),
   openGraph: {
     title: "Custom Cabling Solutions",
     description:
@@ -22,6 +23,9 @@ export const metadata: Metadata = {
     url: "https://customcablingsolutions.com",
     siteName: "Custom Cabling Solutions",
     type: "website",
+  },
+  other: {
+    "theme-color": "#1e3a5f",
   },
 };
 
@@ -33,7 +37,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+        <link rel="apple-touch-icon" href="/favicon.png" />
       </head>
       <body className={`${inter.variable} antialiased`}>
         <Header />

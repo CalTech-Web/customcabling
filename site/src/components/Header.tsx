@@ -60,7 +60,7 @@ export default function Header() {
               onMouseEnter={() => setServicesOpen(true)}
               onMouseLeave={() => setServicesOpen(false)}
             >
-              <button className="flex items-center gap-1 text-gray-300 hover:text-white transition-colors text-sm font-medium">
+              <button aria-label="Open services menu" className="flex items-center gap-1 text-gray-300 hover:text-white transition-colors text-sm font-medium">
                 Services <ChevronDown className="w-4 h-4" />
               </button>
               <AnimatePresence>

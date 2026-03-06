@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import {
   Network,
   Cable,
@@ -148,10 +149,12 @@ export default function ServicesPage() {
                 className="group relative rounded-xl bg-surface border border-border hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 hover:-translate-y-1 transition-all duration-300 overflow-hidden"
               >
                 <div className="relative h-40 overflow-hidden">
-                  <img
+                  <Image
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    fill
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent" />
                   <div className="absolute bottom-3 left-4 w-10 h-10 rounded-lg bg-accent/20 backdrop-blur-sm flex items-center justify-center">

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   ArrowRight,
@@ -87,11 +88,13 @@ export default function ServicePageLayout({
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
             <div>
               {/* Service image */}
-              <div className="rounded-xl overflow-hidden mb-8 border border-border">
-                <img
+              <div className="relative rounded-xl overflow-hidden mb-8 border border-border aspect-video bg-surface-light">
+                <Image
                   src={heroImage}
                   alt={title}
-                  className="w-full h-auto object-contain bg-surface-light"
+                  fill
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  className="object-contain"
                 />
               </div>
               <h2 className="text-2xl font-bold text-white mb-8">What We Deliver</h2>

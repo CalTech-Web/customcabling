@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import Image from "next/image";
 import { Award, Shield, Users, MapPin } from "lucide-react";
 import TestimonialsCTA from "@/components/TestimonialsCTA";
 
@@ -35,7 +36,7 @@ export default function AboutPage() {
       {/* Values */}
       <section className="py-24 bg-surface">
         <div className="max-w-7xl mx-auto px-4">
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-10 md:gap-16 items-center">
             <div>
               <h2 className="text-3xl font-bold text-white mb-6">Our Philosophy</h2>
               <blockquote className="border-l-4 border-accent pl-6 mb-8">
@@ -108,10 +109,12 @@ export default function AboutPage() {
                 key={n}
                 className="relative group rounded-xl overflow-hidden aspect-[4/3]"
               >
-                <img
+                <Image
                   src={`/images/work/${n}.jpg`}
                   alt={`Project ${n}`}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  fill
+                  sizes="(max-width: 768px) 50vw, 33vw"
+                  className="object-cover group-hover:scale-105 transition-transform duration-500"
                 />
                 <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/40 transition-colors duration-300" />
               </div>

@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 import {
   Network,
@@ -103,10 +104,12 @@ export default function ServicesSection() {
                 className="group block rounded-xl bg-background border border-border hover:border-accent/40 transition-all duration-300 h-full hover:shadow-lg hover:shadow-accent/5 hover:-translate-y-1 relative overflow-hidden"
               >
                 <div className="relative h-32 overflow-hidden">
-                  <img
+                  <Image
                     src={service.image}
                     alt={service.title}
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                    fill
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw"
+                    className="object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
                 </div>
