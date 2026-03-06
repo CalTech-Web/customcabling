@@ -4,7 +4,7 @@ import { Building2, Home, Heart, GraduationCap, Landmark, Server, ArrowRight } f
 import TestimonialsCTA from "@/components/TestimonialsCTA";
 
 export const metadata: Metadata = {
-  title: "Industries We Serve - Custom Cabling Solutions",
+  title: "Industries We Serve | Custom Cabling Solutions in Georgia",
   description:
     "Cabling solutions for commercial, residential, healthcare, education, government, and data center environments across Georgia.",
 };

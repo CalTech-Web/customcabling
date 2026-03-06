@@ -4,7 +4,7 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 export const metadata: Metadata = {
   title: "Fiber Optic Installation & Splicing in Georgia | Custom Cabling Solutions",
   description:
-    "Certified fiber optic installation, fusion splicing, and OTDR testing serving Atlanta, Gainesville, Roswell, and North Georgia. Single-mode and multi-mode fiber specialists.",
+    "Certified fiber optic installation, fusion splicing, and OTDR testing in Atlanta and North Georgia. Single-mode and multi-mode fiber specialists.",
 };
 
 export default function FiberOpticPage() {

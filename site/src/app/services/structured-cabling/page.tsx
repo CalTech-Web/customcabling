@@ -4,7 +4,7 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 export const metadata: Metadata = {
   title: "Structured Cabling Installation in Georgia | Custom Cabling Solutions",
   description:
-    "Expert Cat5e, Cat6, and Cat6a structured cabling installation serving Atlanta, Gainesville, Gwinnett County, and North Georgia. Licensed, BICSI and NEC compliant since 2001.",
+    "Expert Cat5e, Cat6, and Cat6a installation in Atlanta, Gainesville, and North Georgia. Licensed, BICSI and NEC compliant cabling contractor since 2001.",
 };
 
 export default function StructuredCablingPage() {

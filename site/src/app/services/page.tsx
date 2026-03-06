@@ -15,7 +15,7 @@ import {
 import TestimonialsCTA from "@/components/TestimonialsCTA";
 
 export const metadata: Metadata = {
-  title: "Services - Custom Cabling Solutions",
+  title: "Cabling Services in Georgia | Custom Cabling Solutions",
   description:
     "Complete communication cabling services including structured cabling, fiber optic, datacenter build-outs, security cameras, phone systems, and more.",
 };

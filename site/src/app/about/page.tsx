@@ -4,7 +4,7 @@ import { Award, Shield, Users, MapPin } from "lucide-react";
 import TestimonialsCTA from "@/components/TestimonialsCTA";
 
 export const metadata: Metadata = {
-  title: "About Us - Custom Cabling Solutions",
+  title: "About Custom Cabling Solutions | Low-Voltage Cabling Contractor in Georgia",
   description:
     "25+ years of experience in commercial, residential, and underground cabling systems. Licensed, insured, and BICSI/NEC compliant.",
 };

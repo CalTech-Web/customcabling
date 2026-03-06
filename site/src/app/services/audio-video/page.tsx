@@ -4,7 +4,7 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 export const metadata: Metadata = {
   title: "Audio Video Installation in Georgia | Custom Cabling Solutions",
   description:
-    "Professional home theater and commercial AV installation serving Atlanta, Gainesville, and North Georgia. Conference room setup and multi-room audio distribution.",
+    "Professional home theater and commercial AV installation in Atlanta, Gainesville, and North Georgia. Conference room setup and multi-room audio distribution.",
 };
 
 export default function AudioVideoPage() {

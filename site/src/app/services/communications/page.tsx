@@ -4,7 +4,7 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 export const metadata: Metadata = {
   title: "Communications Cabling Contractor in Georgia | Custom Cabling Solutions",
   description:
-    "Voice and data cabling, underground systems, and campus backbone connections serving Atlanta, Gainesville, and North Georgia. Licensed low-voltage cabling contractor.",
+    "Voice and data cabling, underground systems, and campus backbone connections in Atlanta and North Georgia. Licensed low-voltage cabling contractor.",
 };
 
 export default function CommunicationsPage() {

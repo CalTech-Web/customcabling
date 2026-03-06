@@ -4,7 +4,7 @@ import ServicePageLayout from "@/components/ServicePageLayout";
 export const metadata: Metadata = {
   title: "Data Center Cabling & Build-Outs in Georgia | Custom Cabling Solutions",
   description:
-    "Complete data center cabling infrastructure and build-outs serving Atlanta, Gwinnett County, and North Georgia. Server racks, cable tray, and hot/cold aisle containment.",
+    "Complete data center cabling and build-outs in Atlanta, Gwinnett County, and North Georgia. Server racks, cable tray, and hot/cold aisle containment.",
 };
 
 export default function DatacenterPage() {

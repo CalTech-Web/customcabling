@@ -3,7 +3,7 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Contact Us - Custom Cabling Solutions",
+  title: "Get a Free Cabling Quote in Georgia | Custom Cabling Solutions",
   description:
     "Get a free quote for your cabling project. Call (678) 551-0952 or fill out our contact form.",
 };

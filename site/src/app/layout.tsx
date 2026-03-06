@@ -12,7 +12,7 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Custom Cabling Solutions - Communications Infrastructure & Technology Systems",
   description:
-    "Georgia-based low-voltage cabling company specializing in commercial, residential, and underground cabling systems since 2001. BICSI and NEC compliant. Licensed and insured.",
+    "Georgia low-voltage cabling company since 2001. Commercial, residential, and underground cabling. BICSI and NEC compliant. Licensed and insured.",
   keywords:
     "cabling, structured cabling, fiber optic, low voltage, network, Georgia, Atlanta, data center, security cameras",
   metadataBase: new URL("https://customcablingsolutions.com"),
