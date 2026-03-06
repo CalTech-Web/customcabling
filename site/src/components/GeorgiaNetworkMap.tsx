@@ -46,10 +46,11 @@ function getNode(id: string) {
 
 export default function GeorgiaNetworkMap() {
   return (
-    <div className="absolute inset-0 flex items-center justify-end pointer-events-none">
+    <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
       <svg
-        viewBox="0 0 580 500"
-        className="w-full h-full max-w-[700px] opacity-30 md:opacity-40"
+        viewBox="60 0 480 480"
+        className="w-full h-full opacity-25 md:opacity-35 lg:opacity-40"
+        preserveAspectRatio="xMidYMid meet"
         fill="none"
         xmlns="http://www.w3.org/2000/svg"
       >
