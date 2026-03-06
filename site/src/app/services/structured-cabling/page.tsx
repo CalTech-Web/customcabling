@@ -2,17 +2,17 @@ import { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Structured Cabling - Custom Cabling Solutions",
+  title: "Structured Cabling Installation in Georgia | Custom Cabling Solutions",
   description:
-    "Professional Cat5e, Cat6, and Cat6a structured cabling installation with testing and certification. BICSI and NEC compliant.",
+    "Expert Cat5e, Cat6, and Cat6a structured cabling installation serving Atlanta, Gainesville, Gwinnett County, and North Georgia. Licensed, BICSI and NEC compliant since 2001.",
 };
 
 export default function StructuredCablingPage() {
   return (
     <ServicePageLayout
       iconName="Network"
-      title="Structured Cabling"
-      description="Professional installation of Cat5e, Cat6, and Cat6a cabling systems for commercial and residential buildings. Every run is tested and certified to BICSI and NEC standards."
+      title="Structured Cabling Installation in Georgia"
+      description="Georgia's trusted structured cabling contractor for Cat5e, Cat6, and Cat6a systems in commercial and residential buildings. Serving the greater Atlanta metro - including Gainesville, Gwinnett County, Roswell, and North Georgia - with every run tested and certified to BICSI and NEC standards."
       features={[
         "Cat5e, Cat6, and Cat6a cable installation",
         "Cable management and pathway systems",
@@ -20,7 +20,7 @@ export default function StructuredCablingPage() {
         "Rack and patch panel installation",
         "Cable testing and certification",
         "Labeling and documentation",
-        "New construction and retrofit projects",
+        "New construction and retrofit projects across the Atlanta metro",
       ]}
     />
   );

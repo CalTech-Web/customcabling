@@ -2,22 +2,22 @@ import { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Security Cameras - Custom Cabling Solutions",
+  title: "Security Camera Installation in Georgia | Custom Cabling Solutions",
   description:
-    "Professional IP security camera installation for commercial and residential properties. NVR setup and remote viewing.",
+    "Professional IP security camera installation for commercial and residential properties across Atlanta, Gainesville, and North Georgia. NVR/DVR setup and remote viewing.",
 };
 
 export default function SecurityCamerasPage() {
   return (
     <ServicePageLayout
       iconName="Camera"
-      title="Security Cameras"
-      description="Protect your property with professionally installed IP camera systems. We handle the full setup from cabling to remote viewing configuration."
+      title="Security Camera Installation in Georgia"
+      description="Protect your property with professionally installed IP camera systems serving the greater Atlanta area. We serve businesses and homeowners across Gainesville, Gwinnett County, Roswell, Athens, and all of North Georgia - from full cabling infrastructure to remote viewing configuration."
       features={[
         "IP camera installation and positioning",
         "NVR and DVR system setup",
         "Remote viewing and mobile access configuration",
-        "Commercial surveillance systems",
+        "Commercial surveillance systems for Georgia businesses",
         "Residential security camera systems",
         "Cabling infrastructure for camera networks",
         "System expansion and upgrades",

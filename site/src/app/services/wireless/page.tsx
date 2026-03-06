@@ -2,17 +2,17 @@ import { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Wireless Networking Solutions - Custom Cabling Solutions",
+  title: "Enterprise WiFi Installation in Georgia | Custom Cabling Solutions",
   description:
-    "Enterprise Wi-Fi deployment, access point installation, site surveys, and network optimization.",
+    "Enterprise Wi-Fi deployment and access point installation serving Atlanta, Gainesville, Gwinnett County, and North Georgia. Site surveys and wireless network optimization.",
 };
 
 export default function WirelessPage() {
   return (
     <ServicePageLayout
       iconName="Wifi"
-      title="Wireless Networking Solutions"
-      description="Reliable wireless coverage for your entire facility. We design, deploy, and optimize enterprise Wi-Fi networks built on a solid cabling foundation."
+      title="Enterprise WiFi Installation in Georgia"
+      description="Reliable wireless coverage for facilities across the greater Atlanta metro. We design, deploy, and optimize enterprise Wi-Fi networks for businesses in Gainesville, Gwinnett County, Roswell, Athens, and all of North Georgia - built on a solid cabling foundation."
       features={[
         "Enterprise Wi-Fi network deployment",
         "Access point installation and configuration",
@@ -20,7 +20,7 @@ export default function WirelessPage() {
         "Network optimization and troubleshooting",
         "Cabling infrastructure for wireless access points",
         "Guest network setup",
-        "Scalable designs for growing businesses",
+        "Scalable designs for growing Georgia businesses",
       ]}
     />
   );
