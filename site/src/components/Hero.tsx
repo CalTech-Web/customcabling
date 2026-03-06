@@ -7,8 +7,15 @@ import { ArrowRight, Phone, Award, Shield, Building2, Users } from "lucide-react
 export default function Hero() {
   return (
     <section className="relative min-h-[90vh] flex items-center overflow-hidden">
-      {/* Background layers */}
-      <div className="absolute inset-0 bg-background" />
+      {/* Background image */}
+      <div className="absolute inset-0">
+        <img
+          src="/images/services/structured-cabling.jpg"
+          alt=""
+          className="w-full h-full object-cover"
+        />
+        <div className="absolute inset-0 bg-background/85" />
+      </div>
       <div className="absolute inset-0 hero-glow" />
       <div className="absolute inset-0 dot-grid opacity-40" />
 

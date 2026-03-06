@@ -24,6 +24,7 @@ const services = [
     icon: Network,
     title: "Structured Cabling",
     href: "/services/structured-cabling",
+    image: "/images/services/structured-cabling.jpg",
     features: [
       "Cat5e, Cat6, and Cat6a installation",
       "Cable management and pathway systems",
@@ -36,6 +37,7 @@ const services = [
     icon: Cable,
     title: "Fiber Optic Cabling & Splicing",
     href: "/services/fiber-optic",
+    image: "/images/services/fiber-optics.jpg",
     features: [
       "Single-mode and multi-mode fiber installation",
       "Fiber blowing and pulling",
@@ -47,6 +49,7 @@ const services = [
     icon: Server,
     title: "Datacenter Build-Outs",
     href: "/services/datacenter",
+    image: "/images/services/datacenter.jpg",
     features: [
       "Server rack installation",
       "Hot/cold aisle containment",
@@ -58,6 +61,7 @@ const services = [
     icon: Camera,
     title: "Security Cameras",
     href: "/services/security-cameras",
+    image: "/images/services/security-cameras.jpg",
     features: [
       "IP camera installation",
       "NVR/DVR system setup",
@@ -69,6 +73,7 @@ const services = [
     icon: PhoneCall,
     title: "Digital/VOIP Phone Systems",
     href: "/services/phone-systems",
+    image: "/images/services/office-cabling.jpg",
     features: [
       "IP phone system installation",
       "PBX configuration",
@@ -80,6 +85,7 @@ const services = [
     icon: Speaker,
     title: "Audio/Video Distribution",
     href: "/services/audio-video",
+    image: "/images/services/audio-video.jpg",
     features: [
       "Home theater installation",
       "Commercial AV systems",
@@ -91,6 +97,7 @@ const services = [
     icon: Wifi,
     title: "Wireless Networking Solutions",
     href: "/services/wireless",
+    image: "/images/services/wireless.jpg",
     features: [
       "Enterprise Wi-Fi deployment",
       "Access point installation",
@@ -102,6 +109,7 @@ const services = [
     icon: Radio,
     title: "Communications Cabling",
     href: "/services/communications",
+    image: "/images/services/cable-rearrangement.jpg",
     features: [
       "Voice and data network cabling",
       "Underground cabling systems",
@@ -137,24 +145,33 @@ export default function ServicesPage() {
               <Link
                 key={service.href}
                 href={service.href}
-                className="group relative p-6 rounded-xl bg-surface border border-border hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 hover:-translate-y-1 transition-all duration-300 overflow-hidden"
+                className="group relative rounded-xl bg-surface border border-border hover:border-accent/30 hover:shadow-lg hover:shadow-accent/5 hover:-translate-y-1 transition-all duration-300 overflow-hidden"
               >
-                <div className="absolute inset-x-0 top-0 h-0.5 bg-accent scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left" />
-                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:scale-110 transition-transform duration-300">
-                  <service.icon className="w-6 h-6 text-accent" />
+                <div className="relative h-40 overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-surface via-surface/40 to-transparent" />
+                  <div className="absolute bottom-3 left-4 w-10 h-10 rounded-lg bg-accent/20 backdrop-blur-sm flex items-center justify-center">
+                    <service.icon className="w-5 h-5 text-accent" />
+                  </div>
                 </div>
-                <h2 className="text-xl font-bold text-white mb-3">{service.title}</h2>
-                <ul className="space-y-1.5 mb-4">
-                  {service.features.map((f) => (
-                    <li key={f} className="flex items-start gap-2 text-gray-400 text-sm">
-                      <div className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0" />
-                      {f}
-                    </li>
-                  ))}
-                </ul>
-                <span className="inline-flex items-center gap-1 text-accent group-hover:text-accent-light text-sm font-medium transition-colors">
-                  Learn more <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </span>
+                <div className="p-5">
+                  <h2 className="text-lg font-bold text-white mb-2">{service.title}</h2>
+                  <ul className="space-y-1.5 mb-4">
+                    {service.features.map((f) => (
+                      <li key={f} className="flex items-start gap-2 text-gray-400 text-sm">
+                        <div className="w-1.5 h-1.5 rounded-full bg-accent mt-1.5 shrink-0" />
+                        {f}
+                      </li>
+                    ))}
+                  </ul>
+                  <span className="inline-flex items-center gap-1 text-accent group-hover:text-accent-light text-sm font-medium transition-colors">
+                    Learn more <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                  </span>
+                </div>
               </Link>
             ))}
           </div>

@@ -19,48 +19,56 @@ const services = [
     title: "Structured Cabling",
     description: "Cat5e, Cat6, and Cat6a installation with full testing and certification.",
     href: "/services/structured-cabling",
+    image: "/images/services/structured-cabling.jpg",
   },
   {
     icon: Cable,
     title: "Fiber Optic Cabling",
     description: "Single-mode and multi-mode fiber installation, splicing, and OTDR testing.",
     href: "/services/fiber-optic",
+    image: "/images/services/fiber-optics.jpg",
   },
   {
     icon: Server,
     title: "Datacenter Build-Outs",
     description: "Server racks, cable tray systems, and hot/cold aisle containment.",
     href: "/services/datacenter",
+    image: "/images/services/datacenter.jpg",
   },
   {
     icon: Camera,
     title: "Security Cameras",
     description: "IP camera systems with NVR setup and remote viewing configuration.",
     href: "/services/security-cameras",
+    image: "/images/services/security-cameras.jpg",
   },
   {
     icon: PhoneCall,
     title: "Phone Systems",
     description: "Digital and VOIP phone system installation, PBX configuration, and upgrades.",
     href: "/services/phone-systems",
+    image: "/images/services/office-cabling.jpg",
   },
   {
     icon: Speaker,
     title: "Audio/Video",
     description: "Home theaters, commercial AV, conference rooms, and multi-room audio.",
     href: "/services/audio-video",
+    image: "/images/services/audio-video.jpg",
   },
   {
     icon: Wifi,
     title: "Wireless Networking",
     description: "Enterprise Wi-Fi deployment, site surveys, and network optimization.",
     href: "/services/wireless",
+    image: "/images/services/wireless.jpg",
   },
   {
     icon: Radio,
     title: "Communications Cabling",
     description: "Voice and data networks, underground systems, and campus backbone cabling.",
     href: "/services/communications",
+    image: "/images/services/cable-rearrangement.jpg",
   },
 ];
 
@@ -92,13 +100,23 @@ export default function ServicesSection() {
             >
               <Link
                 href={service.href}
-                className="group block p-6 rounded-xl bg-background border border-border hover:border-accent/40 transition-all duration-300 h-full hover:shadow-lg hover:shadow-accent/5 hover:-translate-y-1 relative overflow-hidden before:absolute before:inset-x-0 before:top-0 before:h-0.5 before:bg-accent before:scale-x-0 before:transition-transform before:duration-300 hover:before:scale-x-100"
+                className="group block rounded-xl bg-background border border-border hover:border-accent/40 transition-all duration-300 h-full hover:shadow-lg hover:shadow-accent/5 hover:-translate-y-1 relative overflow-hidden"
               >
-                <div className="w-12 h-12 rounded-lg bg-accent/10 flex items-center justify-center mb-4 group-hover:bg-accent/20 group-hover:scale-110 transition-all duration-300">
-                  <service.icon className="w-6 h-6 text-accent" />
+                <div className="relative h-32 overflow-hidden">
+                  <img
+                    src={service.image}
+                    alt={service.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-background via-background/50 to-transparent" />
                 </div>
-                <h3 className="text-white font-semibold mb-2">{service.title}</h3>
-                <p className="text-gray-400 text-sm">{service.description}</p>
+                <div className="p-5">
+                  <div className="w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center mb-3 group-hover:bg-accent/20 group-hover:scale-110 transition-all duration-300">
+                    <service.icon className="w-5 h-5 text-accent" />
+                  </div>
+                  <h3 className="text-white font-semibold mb-2">{service.title}</h3>
+                  <p className="text-gray-400 text-sm">{service.description}</p>
+                </div>
               </Link>
             </motion.div>
           ))}

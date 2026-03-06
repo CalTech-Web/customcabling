@@ -3,17 +3,17 @@
 import { motion } from "framer-motion";
 
 const partners = [
-  "Schneider Electric",
-  "Panduit",
-  "Liberty AV",
-  "D-Link",
-  "Avaya",
-  "Chatsworth",
-  "Cisco",
-  "Leviton",
-  "OVRC",
-  "Samsung",
-  "Sony",
+  { name: "Schneider Electric", logo: "/images/partners/schneider.jpg" },
+  { name: "Panduit", logo: "/images/partners/panduit.jpg" },
+  { name: "Liberty AV", logo: "/images/partners/liberty.jpg" },
+  { name: "D-Link", logo: "/images/partners/dlink.jpg" },
+  { name: "Avaya", logo: "/images/partners/avaya.jpg" },
+  { name: "Chatsworth", logo: "/images/partners/chatsworth.jpg" },
+  { name: "Cisco", logo: "/images/partners/cisco.jpg" },
+  { name: "Leviton", logo: "/images/partners/leviton.jpg" },
+  { name: "OVRC", logo: "/images/partners/ovrc.jpg" },
+  { name: "Samsung", logo: "/images/partners/samsung.jpg" },
+  { name: "Sony", logo: "/images/partners/sony.jpg" },
 ];
 
 export default function PartnersSection() {
@@ -31,17 +31,21 @@ export default function PartnersSection() {
         <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-background to-transparent z-10" />
 
         <motion.div
-          className="flex gap-16 items-center whitespace-nowrap"
+          className="flex gap-12 items-center"
           animate={{ x: ["0%", "-50%"] }}
-          transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
+          transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
         >
           {[...partners, ...partners].map((partner, i) => (
-            <span
-              key={`${partner}-${i}`}
-              className="text-xl md:text-2xl font-bold text-gray-600 select-none hover:text-gray-400 transition-colors duration-300"
+            <div
+              key={`${partner.name}-${i}`}
+              className="shrink-0 w-28 h-16 flex items-center justify-center bg-white/[0.06] rounded-lg p-3 hover:bg-white/[0.1] transition-colors duration-300"
             >
-              {partner}
-            </span>
+              <img
+                src={partner.logo}
+                alt={partner.name}
+                className="max-w-full max-h-full object-contain brightness-0 invert opacity-60 hover:opacity-100 transition-opacity duration-300"
+              />
+            </div>
           ))}
         </motion.div>
       </div>

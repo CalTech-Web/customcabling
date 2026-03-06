@@ -93,8 +93,35 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Differentiators */}
+      {/* Our Work */}
       <section className="py-24 bg-background">
+        <div className="max-w-7xl mx-auto px-4">
+          <h2 className="text-3xl font-bold text-white mb-4 text-center">
+            Our Work
+          </h2>
+          <p className="text-gray-400 text-center mb-12 max-w-2xl mx-auto">
+            A look at some of our recent projects across Georgia.
+          </p>
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-4">
+            {[1, 2, 3, 4, 5, 6].map((n) => (
+              <div
+                key={n}
+                className="relative group rounded-xl overflow-hidden aspect-[4/3]"
+              >
+                <img
+                  src={`/images/work/${n}.jpg`}
+                  alt={`Project ${n}`}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                />
+                <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/40 transition-colors duration-300" />
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Differentiators */}
+      <section className="py-24 bg-surface">
         <div className="max-w-7xl mx-auto px-4">
           <h2 className="text-3xl font-bold text-white mb-12 text-center">
             Why Choose Us

@@ -27,6 +27,17 @@ const iconMap = {
   Radio,
 } as const;
 
+const imageMap: Record<string, string> = {
+  Network: "/images/services/structured-cabling.jpg",
+  Cable: "/images/services/fiber-optics.jpg",
+  Server: "/images/services/datacenter.jpg",
+  Camera: "/images/services/security-cameras.jpg",
+  PhoneCall: "/images/services/office-cabling.jpg",
+  Speaker: "/images/services/audio-video.jpg",
+  Wifi: "/images/services/wireless.jpg",
+  Radio: "/images/services/cable-rearrangement.jpg",
+};
+
 interface ServicePageLayoutProps {
   iconName: keyof typeof iconMap;
   title: string;
@@ -41,17 +52,17 @@ export default function ServicePageLayout({
   features,
 }: ServicePageLayoutProps) {
   const Icon = iconMap[iconName];
+  const heroImage = imageMap[iconName];
 
   return (
     <>
       {/* Hero */}
       <section className="relative py-24 bg-background overflow-hidden">
-        <div className="absolute inset-0 hero-glow" />
-        <div className="absolute inset-0 dot-grid opacity-20" />
-        {/* Large decorative icon */}
-        <div className="absolute -right-20 top-1/2 -translate-y-1/2 opacity-[0.03]">
-          <Icon className="w-[400px] h-[400px]" />
+        <div className="absolute inset-0">
+          <img src={heroImage} alt="" className="w-full h-full object-cover" />
+          <div className="absolute inset-0 bg-background/80" />
         </div>
+        <div className="absolute inset-0 hero-glow" />
         <div className="relative max-w-7xl mx-auto px-4">
           <Link
             href="/services"
