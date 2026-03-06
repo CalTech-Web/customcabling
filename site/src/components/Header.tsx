@@ -39,7 +39,13 @@ export default function Header() {
       <header className="bg-surface/95 backdrop-blur-md sticky top-0 z-50 border-b border-border">
         <div className="max-w-7xl mx-auto px-4 flex items-center justify-between h-16">
           <Link href="/" className="flex items-center gap-2">
-            <img src="/logo.jpg" alt="Custom Cabling Solutions" className="h-10 w-auto" />
+            <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+              <span className="text-white font-bold text-sm">CC</span>
+            </div>
+            <div className="leading-tight">
+              <span className="font-bold text-white text-lg">Custom Cabling</span>
+              <span className="block text-xs text-accent-light -mt-0.5">Solutions</span>
+            </div>
           </Link>
 
           {/* Desktop nav */}

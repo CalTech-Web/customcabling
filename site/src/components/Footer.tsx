@@ -35,8 +35,14 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Company info */}
           <div>
-            <div className="mb-4">
-              <img src="/logo.jpg" alt="Custom Cabling Solutions" className="h-10 w-auto" />
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
+                <span className="text-white font-bold text-sm">CC</span>
+              </div>
+              <div className="leading-tight">
+                <span className="font-bold text-white">Custom Cabling</span>
+                <span className="block text-xs text-accent-light -mt-0.5">Solutions</span>
+              </div>
             </div>
             <p className="text-gray-400 text-sm mb-4">
               Leading the way with communications infrastructure and technology systems since 2001.
