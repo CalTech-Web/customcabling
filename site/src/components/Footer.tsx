@@ -35,14 +35,8 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
           {/* Company info */}
           <div>
-            <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                <span className="text-white font-bold text-sm">CC</span>
-              </div>
-              <div className="leading-tight">
-                <span className="font-bold text-white">Custom Cabling</span>
-                <span className="block text-xs text-accent-light -mt-0.5">Solutions</span>
-              </div>
+            <div className="mb-4">
+              <img src="/logo.jpg" alt="Custom Cabling Solutions" className="h-10 w-auto" />
             </div>
             <p className="text-gray-400 text-sm mb-4">
               Leading the way with communications infrastructure and technology systems since 2001.
@@ -113,14 +107,14 @@ export default function Footer() {
         <div className="max-w-7xl mx-auto px-4 py-6 flex flex-col sm:flex-row justify-between items-center gap-4 text-sm text-gray-500">
           <p>&copy; 2001-2026 Custom Cabling Solutions - All Rights Reserved.</p>
           <p>
-            Powered by{" "}
+            Built by{" "}
             <a
               href="https://caltechweb.com"
               target="_blank"
               rel="noopener noreferrer"
               className="text-accent hover:text-accent-light transition-colors"
             >
-              Caltechweb
+              CalTech Web
             </a>
           </p>
         </div>
