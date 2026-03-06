@@ -13,11 +13,9 @@ export default function Hero() {
       <div className="absolute inset-0 hero-glow" />
       <div className="absolute inset-0 dot-grid opacity-20" />
 
-      {/* Animated Georgia network map */}
-      <GeorgiaNetworkMap />
-
       <div className="relative max-w-7xl mx-auto px-4 py-24 w-full">
-        <div className="max-w-3xl">
+        <div className="flex items-center gap-0">
+        <div className="max-w-3xl shrink-0 relative z-10">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -68,6 +66,12 @@ export default function Hero() {
               <Phone className="w-5 h-5" /> (678) 551-0952
             </a>
           </motion.div>
+        </div>
+
+        {/* Georgia network map - right column */}
+        <div className="hidden lg:block flex-1 min-w-0 relative h-[500px]">
+          <GeorgiaNetworkMap />
+        </div>
         </div>
 
         {/* Stats row */}
