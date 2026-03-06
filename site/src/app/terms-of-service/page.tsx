@@ -2,6 +2,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Terms of Service - Custom Cabling Solutions",
+  alternates: { canonical: "/terms-of-service" },
 };
 
 export default function TermsOfServicePage() {

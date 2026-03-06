@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "VoIP & Business Phone System Installation in Georgia | Custom Cabling Solutions",
   description:
     "IP and VoIP phone system installation and cabling for businesses across Atlanta, Gainesville, and North Georgia. PBX configuration, upgrades, and migrations.",
+  alternates: { canonical: "/services/phone-systems" },
 };
 
 export default function PhoneSystemsPage() {

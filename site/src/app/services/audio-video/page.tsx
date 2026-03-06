@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Audio Video Installation in Georgia | Custom Cabling Solutions",
   description:
     "Professional home theater and commercial AV installation in Atlanta, Gainesville, and North Georgia. Conference room setup and multi-room audio distribution.",
+  alternates: { canonical: "/services/audio-video" },
 };
 
 export default function AudioVideoPage() {

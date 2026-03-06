@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Fiber Optic Installation & Splicing in Georgia | Custom Cabling Solutions",
   description:
     "Certified fiber optic installation, fusion splicing, and OTDR testing in Atlanta and North Georgia. Single-mode and multi-mode fiber specialists.",
+  alternates: { canonical: "/services/fiber-optic" },
 };
 
 export default function FiberOpticPage() {

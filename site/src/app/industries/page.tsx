@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "Industries We Serve | Custom Cabling Solutions in Georgia",
   description:
     "Cabling solutions for commercial, residential, healthcare, education, government, and data center environments across Georgia.",
+  alternates: { canonical: "/industries" },
 };
 
 const industries = [

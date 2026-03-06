@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Security Camera Installation in Georgia | Custom Cabling Solutions",
   description:
     "Professional IP security camera installation for businesses and homes in Atlanta, Gainesville, and North Georgia. NVR/DVR setup and remote viewing.",
+  alternates: { canonical: "/services/security-cameras" },
 };
 
 export default function SecurityCamerasPage() {

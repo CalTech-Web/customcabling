@@ -7,6 +7,7 @@ export const metadata: Metadata = {
   title: "About Custom Cabling Solutions | Low-Voltage Cabling Contractor in Georgia",
   description:
     "25+ years of experience in commercial, residential, and underground cabling systems. Licensed, insured, and BICSI/NEC compliant.",
+  alternates: { canonical: "/about" },
 };
 
 export default function AboutPage() {

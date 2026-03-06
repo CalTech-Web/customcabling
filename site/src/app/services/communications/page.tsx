@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Communications Cabling Contractor in Georgia | Custom Cabling Solutions",
   description:
     "Voice and data cabling, underground systems, and campus backbone connections in Atlanta and North Georgia. Licensed low-voltage cabling contractor.",
+  alternates: { canonical: "/services/communications" },
 };
 
 export default function CommunicationsPage() {

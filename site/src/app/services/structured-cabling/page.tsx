@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Structured Cabling Installation in Georgia | Custom Cabling Solutions",
   description:
     "Expert Cat5e, Cat6, and Cat6a installation in Atlanta, Gainesville, and North Georgia. Licensed, BICSI and NEC compliant cabling contractor since 2001.",
+  alternates: { canonical: "/services/structured-cabling" },
 };
 
 export default function StructuredCablingPage() {

@@ -16,6 +16,9 @@ export const metadata: Metadata = {
   keywords:
     "cabling, structured cabling, fiber optic, low voltage, network, Georgia, Atlanta, data center, security cameras",
   metadataBase: new URL("https://customcablingsolutions.com"),
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Custom Cabling Solutions",
     description:

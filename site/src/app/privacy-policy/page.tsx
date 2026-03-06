@@ -2,6 +2,7 @@ import { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "Privacy Policy - Custom Cabling Solutions",
+  alternates: { canonical: "/privacy-policy" },
 };
 
 export default function PrivacyPolicyPage() {

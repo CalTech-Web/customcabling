@@ -25,3 +25,29 @@
   - industries: "Industries We Serve | Custom Cabling Solutions in Georgia"
   - services index: "Cabling Services in Georgia | Custom Cabling Solutions"
 - All service pages already had "Georgia" in titles and primary keywords in H1s
+Run 1 complete. Here's a summary of what was done:
+
+**Meta descriptions fixed (all now under 160 chars):**
+- Homepage, structured-cabling, fiber-optic, datacenter, security-cameras, audio-video, wireless, communications
+
+**Meta titles improved (added "Georgia" geo keyword):**
+- About: `About Custom Cabling Solutions | Low-Voltage Cabling Contractor in Georgia`
+- Contact: `Get a Free Cabling Quote in Georgia | Custom Cabling Solutions`
+- Industries: `Industries We Serve | Custom Cabling Solutions in Georgia`
+- Services: `Cabling Services in Georgia | Custom Cabling Solutions`
+
+All 8 service pages already had "Georgia" in titles and primary service keywords in their H1s via `ServicePageLayout`. Committed as `3b27821`.
+[2026-03-06 09:26:31] Run #1 finished
+[2026-03-06 09:26:36] Run #2 starting (model: sonnet)
+
+## Run 2 - Canonical tags and sitemap
+
+### Completed
+- Created `site/src/app/sitemap.ts` with all 15 pages (Next.js native sitemap format):
+  - Homepage (priority 1.0), services index (0.9), 8 service pages (0.8 each)
+  - Industries, contact (0.7), about (0.6), privacy-policy and terms-of-service (0.2)
+- Added `alternates: { canonical: '...' }` to metadata on all 15 pages:
+  - layout.tsx (homepage `/`), about, contact, industries, services index
+  - structured-cabling, fiber-optic, datacenter, security-cameras, phone-systems
+  - audio-video, wireless, communications, privacy-policy, terms-of-service
+- Canonical URLs resolve relative to `metadataBase: https://customcablingsolutions.com` already set in layout.tsx

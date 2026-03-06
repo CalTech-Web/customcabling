@@ -18,6 +18,7 @@ export const metadata: Metadata = {
   title: "Cabling Services in Georgia | Custom Cabling Solutions",
   description:
     "Complete communication cabling services including structured cabling, fiber optic, datacenter build-outs, security cameras, phone systems, and more.",
+  alternates: { canonical: "/services" },
 };
 
 const services = [

@@ -5,6 +5,7 @@ export const metadata: Metadata = {
   title: "Enterprise WiFi Installation in Georgia | Custom Cabling Solutions",
   description:
     "Enterprise Wi-Fi deployment and access point installation in Atlanta, Gainesville, Gwinnett County, and North Georgia. Site surveys and network optimization.",
+  alternates: { canonical: "/services/wireless" },
 };
 
 export default function WirelessPage() {
