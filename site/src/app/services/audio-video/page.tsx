@@ -2,12 +2,12 @@ import { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Audio Video Installation in Georgia | Custom Cabling Solutions",
+  title: "Audio/Video Distribution | Custom Cabling Solutions",
   description:
     "Professional home theater and commercial AV installation in Atlanta, Gainesville, and North Georgia. Conference room setup and multi-room audio distribution.",
   alternates: { canonical: "/services/audio-video" },
   openGraph: {
-    title: "Audio Video Installation in Georgia | Custom Cabling Solutions",
+    title: "Audio/Video Distribution | Custom Cabling Solutions",
     description:
       "Professional home theater and commercial AV installation in Atlanta, Gainesville, and North Georgia. Conference room setup and multi-room audio distribution.",
     url: "https://customcablingsolutions.com/services/audio-video",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Audio Video Installation in Georgia | Custom Cabling Solutions",
+    title: "Audio/Video Distribution | Custom Cabling Solutions",
     description:
       "Professional home theater and commercial AV installation in Atlanta, Gainesville, and North Georgia. Conference room setup and multi-room audio distribution.",
   },

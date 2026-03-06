@@ -2,12 +2,12 @@ import { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Fiber Optic Installation & Splicing in Georgia | Custom Cabling Solutions",
+  title: "Fiber Optic Cabling | Custom Cabling Solutions",
   description:
     "Certified fiber optic installation, fusion splicing, and OTDR testing in Atlanta and North Georgia. Single-mode and multi-mode fiber specialists.",
   alternates: { canonical: "/services/fiber-optic" },
   openGraph: {
-    title: "Fiber Optic Installation & Splicing in Georgia | Custom Cabling Solutions",
+    title: "Fiber Optic Cabling | Custom Cabling Solutions",
     description:
       "Certified fiber optic installation, fusion splicing, and OTDR testing in Atlanta and North Georgia. Single-mode and multi-mode fiber specialists.",
     url: "https://customcablingsolutions.com/services/fiber-optic",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Fiber Optic Installation & Splicing in Georgia | Custom Cabling Solutions",
+    title: "Fiber Optic Cabling | Custom Cabling Solutions",
     description:
       "Certified fiber optic installation, fusion splicing, and OTDR testing in Atlanta and North Georgia. Single-mode and multi-mode fiber specialists.",
   },

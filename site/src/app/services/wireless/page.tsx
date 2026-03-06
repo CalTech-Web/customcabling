@@ -2,12 +2,12 @@ import { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Enterprise WiFi Installation in Georgia | Custom Cabling Solutions",
+  title: "Wireless Networking | Custom Cabling Solutions",
   description:
     "Enterprise Wi-Fi deployment and access point installation in Atlanta, Gainesville, Gwinnett County, and North Georgia. Site surveys and network optimization.",
   alternates: { canonical: "/services/wireless" },
   openGraph: {
-    title: "Enterprise WiFi Installation in Georgia | Custom Cabling Solutions",
+    title: "Wireless Networking | Custom Cabling Solutions",
     description:
       "Enterprise Wi-Fi deployment and access point installation in Atlanta, Gainesville, Gwinnett County, and North Georgia. Site surveys and network optimization.",
     url: "https://customcablingsolutions.com/services/wireless",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Enterprise WiFi Installation in Georgia | Custom Cabling Solutions",
+    title: "Wireless Networking | Custom Cabling Solutions",
     description:
       "Enterprise Wi-Fi deployment and access point installation in Atlanta, Gainesville, Gwinnett County, and North Georgia. Site surveys and network optimization.",
   },

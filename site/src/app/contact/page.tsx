@@ -3,12 +3,12 @@ import { Phone, Mail, MapPin, Clock } from "lucide-react";
 import ContactForm from "@/components/ContactForm";
 
 export const metadata: Metadata = {
-  title: "Get a Free Cabling Quote in Georgia | Custom Cabling Solutions",
+  title: "Free Cabling Quote | Custom Cabling Solutions",
   description:
     "Get a free quote for your cabling project. Call (678) 551-0952 or fill out our contact form.",
   alternates: { canonical: "/contact" },
   openGraph: {
-    title: "Get a Free Cabling Quote in Georgia | Custom Cabling Solutions",
+    title: "Free Cabling Quote | Custom Cabling Solutions",
     description:
       "Get a free quote for your cabling project. Call (678) 551-0952 or fill out our contact form.",
     url: "https://customcablingsolutions.com/contact",
@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Get a Free Cabling Quote in Georgia | Custom Cabling Solutions",
+    title: "Free Cabling Quote | Custom Cabling Solutions",
     description:
       "Get a free quote for your cabling project. Call (678) 551-0952 or fill out our contact form.",
   },

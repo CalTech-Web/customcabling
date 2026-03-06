@@ -2,12 +2,12 @@ import { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "VoIP & Business Phone System Installation in Georgia | Custom Cabling Solutions",
+  title: "VoIP Phone Systems | Custom Cabling Solutions",
   description:
     "IP and VoIP phone system installation and cabling for businesses across Atlanta, Gainesville, and North Georgia. PBX configuration, upgrades, and migrations.",
   alternates: { canonical: "/services/phone-systems" },
   openGraph: {
-    title: "VoIP & Business Phone System Installation in Georgia | Custom Cabling Solutions",
+    title: "VoIP Phone Systems | Custom Cabling Solutions",
     description:
       "IP and VoIP phone system installation and cabling for businesses across Atlanta, Gainesville, and North Georgia. PBX configuration, upgrades, and migrations.",
     url: "https://customcablingsolutions.com/services/phone-systems",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "VoIP & Business Phone System Installation in Georgia | Custom Cabling Solutions",
+    title: "VoIP Phone Systems | Custom Cabling Solutions",
     description:
       "IP and VoIP phone system installation and cabling for businesses across Atlanta, Gainesville, and North Georgia. PBX configuration, upgrades, and migrations.",
   },

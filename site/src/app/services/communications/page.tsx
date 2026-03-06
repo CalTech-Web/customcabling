@@ -2,12 +2,12 @@ import { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Communications Cabling Contractor in Georgia | Custom Cabling Solutions",
+  title: "Communications Cabling | Custom Cabling Solutions",
   description:
     "Voice and data cabling, underground systems, and campus backbone connections in Atlanta and North Georgia. Licensed low-voltage cabling contractor.",
   alternates: { canonical: "/services/communications" },
   openGraph: {
-    title: "Communications Cabling Contractor in Georgia | Custom Cabling Solutions",
+    title: "Communications Cabling | Custom Cabling Solutions",
     description:
       "Voice and data cabling, underground systems, and campus backbone connections in Atlanta and North Georgia. Licensed low-voltage cabling contractor.",
     url: "https://customcablingsolutions.com/services/communications",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Communications Cabling Contractor in Georgia | Custom Cabling Solutions",
+    title: "Communications Cabling | Custom Cabling Solutions",
     description:
       "Voice and data cabling, underground systems, and campus backbone connections in Atlanta and North Georgia. Licensed low-voltage cabling contractor.",
   },

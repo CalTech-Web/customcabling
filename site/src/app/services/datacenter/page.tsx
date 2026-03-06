@@ -2,12 +2,12 @@ import { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Data Center Cabling & Build-Outs in Georgia | Custom Cabling Solutions",
+  title: "Data Center Build-Outs | Custom Cabling Solutions",
   description:
     "Complete data center cabling and build-outs in Atlanta, Gwinnett County, and North Georgia. Server racks, cable tray, and hot/cold aisle containment.",
   alternates: { canonical: "/services/datacenter" },
   openGraph: {
-    title: "Data Center Cabling & Build-Outs in Georgia | Custom Cabling Solutions",
+    title: "Data Center Build-Outs | Custom Cabling Solutions",
     description:
       "Complete data center cabling and build-outs in Atlanta, Gwinnett County, and North Georgia. Server racks, cable tray, and hot/cold aisle containment.",
     url: "https://customcablingsolutions.com/services/datacenter",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Data Center Cabling & Build-Outs in Georgia | Custom Cabling Solutions",
+    title: "Data Center Build-Outs | Custom Cabling Solutions",
     description:
       "Complete data center cabling and build-outs in Atlanta, Gwinnett County, and North Georgia. Server racks, cable tray, and hot/cold aisle containment.",
   },

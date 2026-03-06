@@ -2,12 +2,12 @@ import { Metadata } from "next";
 import ServicePageLayout from "@/components/ServicePageLayout";
 
 export const metadata: Metadata = {
-  title: "Security Camera Installation in Georgia | Custom Cabling Solutions",
+  title: "Security Cameras | Custom Cabling Solutions",
   description:
     "Professional IP security camera installation for businesses and homes in Atlanta, Gainesville, and North Georgia. NVR/DVR setup and remote viewing.",
   alternates: { canonical: "/services/security-cameras" },
   openGraph: {
-    title: "Security Camera Installation in Georgia | Custom Cabling Solutions",
+    title: "Security Cameras | Custom Cabling Solutions",
     description:
       "Professional IP security camera installation for businesses and homes in Atlanta, Gainesville, and North Georgia. NVR/DVR setup and remote viewing.",
     url: "https://customcablingsolutions.com/services/security-cameras",
@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Security Camera Installation in Georgia | Custom Cabling Solutions",
+    title: "Security Cameras | Custom Cabling Solutions",
     description:
       "Professional IP security camera installation for businesses and homes in Atlanta, Gainesville, and North Georgia. NVR/DVR setup and remote viewing.",
   },

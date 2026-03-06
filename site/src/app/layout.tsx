@@ -10,7 +10,7 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "Custom Cabling Solutions - Communications Infrastructure & Technology Systems",
+  title: "Custom Cabling Solutions | Georgia Cabling Contractor",
   description:
     "Georgia low-voltage cabling company since 2001. Commercial, residential, and underground cabling. BICSI and NEC compliant. Licensed and insured.",
   keywords:
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     canonical: "/",
   },
   openGraph: {
-    title: "Custom Cabling Solutions - Communications Infrastructure & Technology Systems",
+    title: "Custom Cabling Solutions | Georgia Cabling Contractor",
     description:
       "Georgia low-voltage cabling company since 2001. Commercial, residential, and underground cabling. BICSI and NEC compliant. Licensed and insured.",
     url: "https://customcablingsolutions.com",
@@ -31,7 +31,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "Custom Cabling Solutions - Communications Infrastructure & Technology Systems",
+    title: "Custom Cabling Solutions | Georgia Cabling Contractor",
     description:
       "Georgia low-voltage cabling company since 2001. Commercial, residential, and underground cabling. BICSI and NEC compliant. Licensed and insured.",
     images: ["/logo.jpg"],

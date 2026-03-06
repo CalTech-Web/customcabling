@@ -4,12 +4,12 @@ import { Award, Shield, Users, MapPin } from "lucide-react";
 import TestimonialsCTA from "@/components/TestimonialsCTA";
 
 export const metadata: Metadata = {
-  title: "About Custom Cabling Solutions | Low-Voltage Cabling Contractor in Georgia",
+  title: "About Custom Cabling Solutions | Georgia",
   description:
     "25+ years of experience in commercial, residential, and underground cabling systems. Licensed, insured, and BICSI/NEC compliant.",
   alternates: { canonical: "/about" },
   openGraph: {
-    title: "About Custom Cabling Solutions | Low-Voltage Cabling Contractor in Georgia",
+    title: "About Custom Cabling Solutions | Georgia",
     description:
       "25+ years of experience in commercial, residential, and underground cabling systems. Licensed, insured, and BICSI/NEC compliant.",
     url: "https://customcablingsolutions.com/about",
@@ -18,7 +18,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary",
-    title: "About Custom Cabling Solutions | Low-Voltage Cabling Contractor in Georgia",
+    title: "About Custom Cabling Solutions | Georgia",
     description:
       "25+ years of experience in commercial, residential, and underground cabling systems. Licensed, insured, and BICSI/NEC compliant.",
   },
