@@ -1,7 +1,19 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useState, useEffect, useRef, FormEvent } from "react";
 import { Send, Loader2, CheckCircle } from "lucide-react";
+
+declare global {
+  interface Window {
+    turnstile?: {
+      render: (
+        container: HTMLElement,
+        options: { sitekey: string; callback: (token: string) => void }
+      ) => string;
+      reset: (widgetId: string) => void;
+    };
+  }
+}
 
 interface ContactFormProps {
   source?: string;
@@ -20,6 +32,24 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
   });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
 
+  /* ── Turnstile ── */
+  const [turnstileToken, setTurnstileToken] = useState("");
+  const turnstileRef = useRef<HTMLDivElement>(null);
+  const widgetIdRef = useRef<string | null>(null);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      if (window.turnstile && turnstileRef.current && !widgetIdRef.current) {
+        widgetIdRef.current = window.turnstile.render(turnstileRef.current, {
+          sitekey: "0x4AAAAAACyyw5m1flznn3Ce",
+          callback: (token: string) => setTurnstileToken(token),
+        });
+        clearInterval(interval);
+      }
+    }, 100);
+    return () => clearInterval(interval);
+  }, []);
+
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setStatus("sending");
@@ -36,7 +66,7 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
           projectType: form.projectType,
           message: form.message,
           source,
-          turnstileToken: document.querySelector<HTMLInputElement>("[name=cf-turnstile-response]")?.value || "",
+          turnstileToken,
         }),
       });
       if (res.ok) {
@@ -148,7 +178,7 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
           Something went wrong. Please try again or call us directly.
         </p>
       )}
-      <div className="cf-turnstile" data-sitekey="0x4AAAAAACyyw5m1flznn3Ce"></div>
+      <div ref={turnstileRef} className="mt-4"></div>
 
       <button
         type="submit"
