@@ -1,7 +1,23 @@
 "use client";
 
-import { useState, FormEvent } from "react";
+import { useState, useEffect, useCallback, FormEvent } from "react";
 import { Send, Loader2, CheckCircle } from "lucide-react";
+
+const RECAPTCHA_SITE_KEY = "6LduoUsnAAAAAM5HE13bYkatQYDizG3q5psgbDEj";
+
+declare global {
+  interface Window {
+    grecaptcha: {
+      ready: (cb: () => void) => void;
+      execute: (key: string, opts: { action: string }) => Promise<string>;
+    };
+  }
+}
+
+interface MathChallenge {
+  token: string;
+  question: string;
+}
 
 interface ContactFormProps {
   source?: string;
@@ -19,10 +35,63 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
     message: "",
   });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
+  const [recaptchaReady, setRecaptchaReady] = useState(false);
+  const [mathChallenge, setMathChallenge] = useState<MathChallenge | null>(null);
+  const [mathAnswer, setMathAnswer] = useState("");
+  const [honeypot, setHoneypot] = useState("");
+
+  const fetchChallenge = useCallback(async () => {
+    try {
+      const res = await fetch("https://forms.caltechweb.com/api/challenge");
+      if (res.ok) {
+        const data = await res.json();
+        setMathChallenge(data);
+        setMathAnswer("");
+      }
+    } catch {
+      // Challenge fetch failed silently
+    }
+  }, []);
+
+  useEffect(() => {
+    // Load reCAPTCHA v3
+    const script = document.createElement("script");
+    script.src = `https://www.google.com/recaptcha/api.js?render=${RECAPTCHA_SITE_KEY}`;
+    script.async = true;
+    script.onload = () => {
+      window.grecaptcha.ready(() => setRecaptchaReady(true));
+    };
+    document.head.appendChild(script);
+
+    // Fetch math challenge
+    fetchChallenge();
+
+    return () => {
+      document.head.removeChild(script);
+    };
+  }, [fetchChallenge]);
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setStatus("sending");
+
+    // Check honeypot
+    if (honeypot) {
+      setStatus("idle");
+      return;
+    }
+
+    // Get reCAPTCHA token with 5s timeout
+    let recaptchaToken: string | null = null;
+    try {
+      recaptchaToken = await Promise.race([
+        window.grecaptcha.execute(RECAPTCHA_SITE_KEY, { action: "contact" }),
+        new Promise<null>((resolve) => setTimeout(() => resolve(null), 5000)),
+      ]);
+    } catch {
+      // reCAPTCHA failed silently
+    }
+
     try {
       const res = await fetch("https://forms.caltechweb.com/api/submit", {
         method: "POST",
@@ -35,6 +104,11 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
           projectType: form.projectType,
           message: form.message,
           source,
+          recaptchaToken,
+          honeypot: honeypot || "",
+          mathToken: mathChallenge?.token || "",
+          mathAnswer,
+          turnstileToken: document.querySelector<HTMLInputElement>("[name=cf-turnstile-response]")?.value || "",
         }),
       });
       if (res.ok) {
@@ -42,9 +116,11 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
         setForm({ name: "", email: "", phone: "", projectType: "", message: "" });
       } else {
         setStatus("error");
+        fetchChallenge();
       }
     } catch {
       setStatus("error");
+      fetchChallenge();
     }
   }
 
@@ -140,14 +216,48 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
           placeholder="Tell us about your project..."
         />
       </div>
+
+      {/* Honeypot */}
+      <div className="hidden" aria-hidden="true">
+        <input
+          type="text"
+          name="honeypot"
+          tabIndex={-1}
+          autoComplete="off"
+          value={honeypot}
+          onChange={(e) => setHoneypot(e.target.value)}
+        />
+      </div>
+
+      {/* Math CAPTCHA */}
+      {mathChallenge && (
+        <div>
+          <label htmlFor="mathAnswer" className="block text-sm text-gray-400 mb-1">
+            {mathChallenge.question} *
+          </label>
+          <input
+            type="text"
+            id="mathAnswer"
+            required
+            value={mathAnswer}
+            onChange={(e) => setMathAnswer(e.target.value)}
+            className={inputClass}
+            placeholder="Your answer"
+            autoComplete="off"
+          />
+        </div>
+      )}
+
       {status === "error" && (
         <p className="text-red-400 text-sm">
           Something went wrong. Please try again or call us directly.
         </p>
       )}
+      <div className="cf-turnstile" data-sitekey="0x4AAAAAACyyw5m1flznn3Ce"></div>
+
       <button
         type="submit"
-        disabled={status === "sending"}
+        disabled={status === "sending" || !recaptchaReady}
         className="w-full btn-primary disabled:opacity-50 py-3.5 flex items-center justify-center gap-2"
       >
         {status === "sending" ? (
@@ -160,6 +270,14 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
           </>
         )}
       </button>
+
+      {/* reCAPTCHA attribution */}
+      <p className="text-xs text-gray-500 text-center">
+        Protected by reCAPTCHA.{" "}
+        <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-300">Privacy</a>
+        {" & "}
+        <a href="https://policies.google.com/terms" target="_blank" rel="noopener noreferrer" className="underline hover:text-gray-300">Terms</a>
+      </p>
     </form>
   );
 }
