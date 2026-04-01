@@ -19,17 +19,10 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
     message: "",
   });
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
-  const [honeypot, setHoneypot] = useState("");
 
   async function handleSubmit(e: FormEvent) {
     e.preventDefault();
     setStatus("sending");
-
-    // Check honeypot
-    if (honeypot) {
-      setStatus("idle");
-      return;
-    }
 
     try {
       const res = await fetch("https://forms.caltechweb.com/api/submit", {
@@ -43,7 +36,6 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
           projectType: form.projectType,
           message: form.message,
           source,
-          honeypot: honeypot || "",
           turnstileToken: document.querySelector<HTMLInputElement>("[name=cf-turnstile-response]")?.value || "",
         }),
       });
@@ -148,18 +140,6 @@ export default function ContactForm({ source = "contact-page" }: ContactFormProp
           onChange={(e) => setForm({ ...form, message: e.target.value })}
           className={`${inputClass} resize-none`}
           placeholder="Tell us about your project..."
-        />
-      </div>
-
-      {/* Honeypot */}
-      <div className="hidden" aria-hidden="true">
-        <input
-          type="text"
-          name="honeypot"
-          tabIndex={-1}
-          autoComplete="off"
-          value={honeypot}
-          onChange={(e) => setHoneypot(e.target.value)}
         />
       </div>
 
